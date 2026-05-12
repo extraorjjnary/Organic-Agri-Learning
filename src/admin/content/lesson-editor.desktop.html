@@ -1,293 +1,647 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Greenfield LMS - Edit Lesson</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#5bec13",
-                        "background-light": "#f6f8f6",
-                        "background-dark": "#162210",
-                    },
-                    fontFamily: {
-                        "display": ["Lexend"]
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Greenfield LMS - Edit Lesson</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#5bec13',
+              'background-light': '#f6f8f6',
+              'background-dark': '#162210',
             },
-        }
+            fontFamily: {
+              display: ['Lexend'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
     </script>
-</head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
-<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<!-- Top Navigation Bar -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 lg:px-10 py-3">
-<div class="flex items-center gap-8">
-<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
-<div class="size-6 text-primary">
-<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"></path>
-</svg>
-</div>
-<h2 class="text-lg font-bold leading-tight tracking-tight">Greenfield LMS</h2>
-</div>
-<label class="hidden md:flex flex-col min-w-40 h-10 max-w-64">
-<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
-<div class="text-slate-500 bg-slate-100 dark:bg-slate-800 flex items-center justify-center pl-4 border-none">
-<span class="material-symbols-outlined text-xl">search</span>
-</div>
-<input class="form-input flex w-full min-w-0 flex-1 border-none bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-0 h-full placeholder:text-slate-500 px-4 pl-2 text-sm font-normal" placeholder="Search courses..."/>
-</div>
-</label>
-</div>
-<div class="flex flex-1 justify-end gap-6 items-center">
-<nav class="hidden xl:flex items-center gap-6">
-<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
-<a class="text-slate-900 dark:text-white text-sm font-semibold border-b-2 border-primary" href="#">Courses</a>
-<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Lessons</a>
-<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Students</a>
-<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Settings</a>
-</nav>
-<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-slate-900 text-sm font-bold shadow-sm hover:opacity-90 transition-opacity">
-                        Publish
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Top Navigation Bar -->
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 lg:px-10 py-3"
+        >
+          <div class="flex items-center gap-8">
+            <div
+              class="flex items-center gap-4 text-slate-900 dark:text-slate-100"
+            >
+              <div class="size-6 text-primary">
+                <svg
+                  fill="currentColor"
+                  viewbox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-lg font-bold leading-tight tracking-tight">
+                Greenfield LMS
+              </h2>
+            </div>
+            <label class="hidden md:flex flex-col min-w-40 h-10 max-w-64">
+              <div
+                class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden"
+              >
+                <div
+                  class="text-slate-500 bg-slate-100 dark:bg-slate-800 flex items-center justify-center pl-4 border-none"
+                >
+                  <span class="material-symbols-outlined text-xl">search</span>
+                </div>
+                <input
+                  class="form-input flex w-full min-w-0 flex-1 border-none bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-0 h-full placeholder:text-slate-500 px-4 pl-2 text-sm font-normal"
+                  placeholder="Search courses..."
+                />
+              </div>
+            </label>
+          </div>
+          <div class="flex flex-1 justify-end gap-6 items-center">
+            <nav class="hidden xl:flex items-center gap-6">
+              <a
+                class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
+                href="#"
+                >Dashboard</a
+              >
+              <a
+                class="text-slate-900 dark:text-white text-sm font-semibold border-b-2 border-primary"
+                href="#"
+                >Courses</a
+              >
+              <a
+                class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
+                href="#"
+                >Lessons</a
+              >
+              <a
+                class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
+                href="#"
+                >Students</a
+              >
+              <a
+                class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
+                href="#"
+                >Settings</a
+              >
+            </nav>
+            <button
+              class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-slate-900 text-sm font-bold shadow-sm hover:opacity-90 transition-opacity"
+            >
+              Publish
+            </button>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20"
+              data-alt="User profile avatar illustration"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQMncyKyu_qhTxb2YcOLGOPZz7qs2xBC5oZBVTCU2zWPIR5_Cawm24cdkTQ_hEOjDqBkAzyQMyRTkEFKxPoSd7dlNpNg3Z6qAGgjDLpXfBOwRG3ZlXHQmJu0ftfJxEwurRE3-qadE0giTvtjYlbfPNDRSzZVtTb8vaSgPa07UEIsiiRVJ4us_YmX2yJrZLU3W6lNfqRx36l6pWPreRkDzGUErjV1R4gdpzXxU23_KrQP578BJm-EsP9RN6o5yAfveMDaNinvg6D33R');
+              "
+            ></div>
+          </div>
+        </header>
+        <!-- Main Content Area -->
+        <main class="flex-1 flex flex-col items-center">
+          <div class="w-full max-w-7xl px-4 lg:px-10 py-6">
+            <!-- Breadcrumbs & Header -->
+            <div class="flex flex-col gap-1 mb-6">
+              <div
+                class="flex items-center gap-2 text-slate-500 text-sm font-medium mb-2"
+              >
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Courses</a
+                >
+                <span class="material-symbols-outlined text-xs"
+                  >chevron_right</span
+                >
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Biology 101</a
+                >
+                <span class="material-symbols-outlined text-xs"
+                  >chevron_right</span
+                >
+                <span class="text-slate-900 dark:text-slate-100"
+                  >Edit Lesson</span
+                >
+              </div>
+              <div class="flex flex-wrap justify-between items-end gap-4">
+                <div>
+                  <h1
+                    class="text-3xl font-black text-slate-900 dark:text-white tracking-tight"
+                  >
+                    Edit Lesson: Photosynthesis
+                  </h1>
+                  <p class="text-slate-500 dark:text-slate-400 mt-1">
+                    Design your lesson structure and multimedia content
+                  </p>
+                </div>
+                <div class="flex gap-3">
+                  <button
+                    class="flex items-center gap-2 px-4 h-10 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-bold hover:bg-slate-50 transition-colors shadow-sm"
+                  >
+                    <span class="material-symbols-outlined text-lg"
+                      >visibility</span
+                    >
+                    Preview
+                  </button>
+                  <button
+                    class="flex items-center gap-2 px-4 h-10 rounded-lg bg-primary/10 border border-primary/20 text-slate-900 dark:text-primary text-sm font-bold hover:bg-primary/20 transition-colors"
+                  >
+                    <span class="material-symbols-outlined text-lg">save</span>
+                    Save Draft
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Split Pane Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              <!-- Left Pane: Lesson Details -->
+              <div class="lg:col-span-4 flex flex-col gap-6">
+                <div
+                  class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800"
+                >
+                  <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary"
+                      >info</span
+                    >
+                    Lesson Information
+                  </h3>
+                  <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-2">
+                      <label
+                        class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                        >Lesson Title</label
+                      >
+                      <input
+                        class="w-full rounded-lg border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 focus:border-primary focus:ring-primary text-sm"
+                        type="text"
+                        value="Photosynthesis: The Basics"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label
+                        class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                        >Short Description</label
+                      >
+                      <textarea
+                        class="w-full rounded-lg border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 focus:border-primary focus:ring-primary text-sm"
+                        rows="4"
+                      >
+In this lesson, we explore how plants convert light energy into chemical energy through the complex process of photosynthesis.</textarea
+                      >
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label
+                        class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                        >Lesson Thumbnail</label
+                      >
+                      <div
+                        class="relative group aspect-video rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 border-2 border-dashed border-slate-200 dark:border-slate-800 flex items-center justify-center"
+                      >
+                        <div
+                          class="absolute inset-0 bg-cover bg-center"
+                          data-alt="Lesson cover image showing green leaves"
+                          style="
+                            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDW--fuSx2Dedd99QyVe69HKTrcrt7ZMvwQIPxPyuyuWiKCB15LOtx6dcf2CAU3fcuFf34zfip6hnhgPrg_LAA9oJ9CgFznzC-YweKCHlS4TsHWl9ahiFNcKMEBsC-ip_SCryJBIG8309JTG8bPYq6i2jrUwrbZPBUlHX_e3vzT5wcCAGAcktCnbCpPGpn05kTXJN3oTctc1gs_WTQv3ggTEb8FbmWCsUmpVXVwCep81G528dt10yKFbhWwSoP7EFFyksXadRWxSFvU');
+                          "
+                        ></div>
+                        <div
+                          class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity cursor-pointer"
+                        >
+                          <span
+                            class="material-symbols-outlined text-white text-3xl"
+                            >add_a_photo</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800"
+                >
+                  <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary"
+                      >settings</span
+                    >
+                    Publishing Settings
+                  </h3>
+                  <div class="flex flex-col gap-4">
+                    <div
+                      class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800"
+                    >
+                      <div class="flex flex-col">
+                        <span class="text-sm font-semibold">Enable Quiz</span>
+                        <span class="text-xs text-slate-500"
+                          >Add assessment at the end</span
+                        >
+                      </div>
+                      <div
+                        class="w-10 h-5 bg-primary rounded-full relative shadow-inner cursor-pointer"
+                      >
+                        <div
+                          class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow"
+                        ></div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800"
+                    >
+                      <div class="flex flex-col">
+                        <span class="text-sm font-semibold">Drip Content</span>
+                        <span class="text-xs text-slate-500"
+                          >Release after 24 hours</span
+                        >
+                      </div>
+                      <div
+                        class="w-10 h-5 bg-slate-300 dark:bg-slate-700 rounded-full relative shadow-inner cursor-pointer"
+                      >
+                        <div
+                          class="absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Right Pane: Content Builder -->
+              <div class="lg:col-span-8 flex flex-col gap-6">
+                <div
+                  class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden"
+                >
+                  <div
+                    class="border-b border-slate-200 dark:border-slate-800 px-6 py-4 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50"
+                  >
+                    <div class="flex items-center gap-4">
+                      <h3 class="text-lg font-bold flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary"
+                          >view_quilt</span
+                        >
+                        Content Builder
+                      </h3>
+                      <div
+                        class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1"
+                      >
+                        <button
+                          class="px-3 py-1 text-xs font-bold bg-white dark:bg-slate-700 rounded-md shadow-sm"
+                        >
+                          Editor
+                        </button>
+                        <button
+                          class="px-3 py-1 text-xs font-bold text-slate-500 hover:text-slate-900 dark:hover:text-white"
+                        >
+                          Outline
+                        </button>
+                      </div>
+                    </div>
+                    <button
+                      class="flex items-center gap-1 text-primary text-sm font-bold hover:underline"
+                    >
+                      <span class="material-symbols-outlined text-sm"
+                        >add_circle</span
+                      >
+                      Add Section
                     </button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile avatar illustration" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQMncyKyu_qhTxb2YcOLGOPZz7qs2xBC5oZBVTCU2zWPIR5_Cawm24cdkTQ_hEOjDqBkAzyQMyRTkEFKxPoSd7dlNpNg3Z6qAGgjDLpXfBOwRG3ZlXHQmJu0ftfJxEwurRE3-qadE0giTvtjYlbfPNDRSzZVtTb8vaSgPa07UEIsiiRVJ4us_YmX2yJrZLU3W6lNfqRx36l6pWPreRkDzGUErjV1R4gdpzXxU23_KrQP578BJm-EsP9RN6o5yAfveMDaNinvg6D33R");'></div>
-</div>
-</header>
-<!-- Main Content Area -->
-<main class="flex-1 flex flex-col items-center">
-<div class="w-full max-w-7xl px-4 lg:px-10 py-6">
-<!-- Breadcrumbs & Header -->
-<div class="flex flex-col gap-1 mb-6">
-<div class="flex items-center gap-2 text-slate-500 text-sm font-medium mb-2">
-<a class="hover:text-primary transition-colors" href="#">Courses</a>
-<span class="material-symbols-outlined text-xs">chevron_right</span>
-<a class="hover:text-primary transition-colors" href="#">Biology 101</a>
-<span class="material-symbols-outlined text-xs">chevron_right</span>
-<span class="text-slate-900 dark:text-slate-100">Edit Lesson</span>
-</div>
-<div class="flex flex-wrap justify-between items-end gap-4">
-<div>
-<h1 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Edit Lesson: Photosynthesis</h1>
-<p class="text-slate-500 dark:text-slate-400 mt-1">Design your lesson structure and multimedia content</p>
-</div>
-<div class="flex gap-3">
-<button class="flex items-center gap-2 px-4 h-10 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-bold hover:bg-slate-50 transition-colors shadow-sm">
-<span class="material-symbols-outlined text-lg">visibility</span>
-                                    Preview
-                                </button>
-<button class="flex items-center gap-2 px-4 h-10 rounded-lg bg-primary/10 border border-primary/20 text-slate-900 dark:text-primary text-sm font-bold hover:bg-primary/20 transition-colors">
-<span class="material-symbols-outlined text-lg">save</span>
-                                    Save Draft
-                                </button>
-</div>
-</div>
-</div>
-<!-- Split Pane Layout -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-<!-- Left Pane: Lesson Details -->
-<div class="lg:col-span-4 flex flex-col gap-6">
-<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
-<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">info</span>
-                                    Lesson Information
-                                </h3>
-<div class="flex flex-col gap-4">
-<div class="flex flex-col gap-2">
-<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Lesson Title</label>
-<input class="w-full rounded-lg border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 focus:border-primary focus:ring-primary text-sm" type="text" value="Photosynthesis: The Basics"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Short Description</label>
-<textarea class="w-full rounded-lg border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 focus:border-primary focus:ring-primary text-sm" rows="4">In this lesson, we explore how plants convert light energy into chemical energy through the complex process of photosynthesis.</textarea>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Lesson Thumbnail</label>
-<div class="relative group aspect-video rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-950 border-2 border-dashed border-slate-200 dark:border-slate-800 flex items-center justify-center">
-<div class="absolute inset-0 bg-cover bg-center" data-alt="Lesson cover image showing green leaves" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDW--fuSx2Dedd99QyVe69HKTrcrt7ZMvwQIPxPyuyuWiKCB15LOtx6dcf2CAU3fcuFf34zfip6hnhgPrg_LAA9oJ9CgFznzC-YweKCHlS4TsHWl9ahiFNcKMEBsC-ip_SCryJBIG8309JTG8bPYq6i2jrUwrbZPBUlHX_e3vzT5wcCAGAcktCnbCpPGpn05kTXJN3oTctc1gs_WTQv3ggTEb8FbmWCsUmpVXVwCep81G528dt10yKFbhWwSoP7EFFyksXadRWxSFvU');"></div>
-<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity cursor-pointer">
-<span class="material-symbols-outlined text-white text-3xl">add_a_photo</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
-<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">settings</span>
-                                    Publishing Settings
-                                </h3>
-<div class="flex flex-col gap-4">
-<div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800">
-<div class="flex flex-col">
-<span class="text-sm font-semibold">Enable Quiz</span>
-<span class="text-xs text-slate-500">Add assessment at the end</span>
-</div>
-<div class="w-10 h-5 bg-primary rounded-full relative shadow-inner cursor-pointer">
-<div class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow"></div>
-</div>
-</div>
-<div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800">
-<div class="flex flex-col">
-<span class="text-sm font-semibold">Drip Content</span>
-<span class="text-xs text-slate-500">Release after 24 hours</span>
-</div>
-<div class="w-10 h-5 bg-slate-300 dark:bg-slate-700 rounded-full relative shadow-inner cursor-pointer">
-<div class="absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Right Pane: Content Builder -->
-<div class="lg:col-span-8 flex flex-col gap-6">
-<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
-<div class="border-b border-slate-200 dark:border-slate-800 px-6 py-4 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900/50">
-<div class="flex items-center gap-4">
-<h3 class="text-lg font-bold flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">view_quilt</span>
-                                            Content Builder
-                                        </h3>
-<div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
-<button class="px-3 py-1 text-xs font-bold bg-white dark:bg-slate-700 rounded-md shadow-sm">Editor</button>
-<button class="px-3 py-1 text-xs font-bold text-slate-500 hover:text-slate-900 dark:hover:text-white">Outline</button>
-</div>
-</div>
-<button class="flex items-center gap-1 text-primary text-sm font-bold hover:underline">
-<span class="material-symbols-outlined text-sm">add_circle</span>
-                                        Add Section
-                                    </button>
-</div>
-<div class="p-6 flex flex-col gap-6">
-<!-- Content Block 1: Intro -->
-<div class="group relative p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 hover:border-primary/40 transition-all bg-white dark:bg-slate-900">
-<div class="flex items-start justify-between mb-4">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-slate-400 cursor-move">drag_indicator</span>
-<span class="flex items-center justify-center size-8 rounded-lg bg-primary/10 text-primary text-sm font-bold">1</span>
-<h4 class="font-bold text-slate-800 dark:text-slate-200">Introduction to Light Conversion</h4>
-</div>
-<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="size-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500"><span class="material-symbols-outlined text-lg">edit</span></button>
-<button class="size-8 flex items-center justify-center rounded-lg hover:bg-red-50 text-red-500"><span class="material-symbols-outlined text-lg">delete</span></button>
-</div>
-</div>
-<div class="pl-11 pr-4">
-<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                                                Start with the fundamental question: How do plants eat? Explain that while humans consume organic matter, plants synthesize it using sunlight, water, and CO2.
-                                            </p>
-<div class="flex items-center gap-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">text_fields</span> Text Content</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">timer</span> 5 mins</span>
-</div>
-</div>
-</div>
-<!-- Content Block 2: Interactive Video -->
-<div class="group relative p-4 rounded-xl border-2 border-primary/20 bg-primary/5 transition-all">
-<div class="flex items-start justify-between mb-4">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-slate-400 cursor-move">drag_indicator</span>
-<span class="flex items-center justify-center size-8 rounded-lg bg-primary/20 text-primary text-sm font-bold">2</span>
-<h4 class="font-bold text-slate-800 dark:text-slate-200">Chemical Pathway Animation</h4>
-</div>
-<div class="flex gap-2">
-<button class="size-8 flex items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-slate-500 shadow-sm"><span class="material-symbols-outlined text-lg">edit</span></button>
-<button class="size-8 flex items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-red-500 shadow-sm"><span class="material-symbols-outlined text-lg">delete</span></button>
-</div>
-</div>
-<div class="pl-11 pr-4">
-<div class="aspect-video w-full max-w-md rounded-lg overflow-hidden relative mb-4 shadow-lg">
-<div class="absolute inset-0 bg-slate-800 flex items-center justify-center" data-alt="Dark green abstract background for video placeholder" style="background-image: linear-gradient(45deg, #162210, #2c4a1b);">
-<span class="material-symbols-outlined text-white text-6xl">play_circle</span>
-</div>
-</div>
-<div class="flex items-center gap-4 text-xs font-bold text-primary uppercase tracking-widest">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">videocam</span> Video Module</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">timer</span> 12 mins</span>
-</div>
-</div>
-</div>
-<!-- Content Block 3: Diagram Upload -->
-<div class="group relative p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 hover:border-primary/40 transition-all bg-white dark:bg-slate-900">
-<div class="flex items-start justify-between mb-4">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-slate-400 cursor-move">drag_indicator</span>
-<span class="flex items-center justify-center size-8 rounded-lg bg-primary/10 text-primary text-sm font-bold">3</span>
-<h4 class="font-bold text-slate-800 dark:text-slate-200">Chloroplast Anatomy</h4>
-</div>
-<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-<button class="size-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500"><span class="material-symbols-outlined text-lg">edit</span></button>
-<button class="size-8 flex items-center justify-center rounded-lg hover:bg-red-50 text-red-500"><span class="material-symbols-outlined text-lg">delete</span></button>
-</div>
-</div>
-<div class="pl-11 pr-4">
-<div class="grid grid-cols-2 gap-4 mb-4">
-<div class="aspect-square rounded-lg bg-slate-50 dark:bg-slate-800 border-2 border-dashed border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center p-4">
-<span class="material-symbols-outlined text-slate-300 text-4xl mb-2">image</span>
-<span class="text-[10px] text-slate-400 text-center uppercase font-bold">Outer Membrane</span>
-</div>
-<div class="aspect-square rounded-lg bg-slate-50 dark:bg-slate-800 border-2 border-dashed border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center p-4">
-<span class="material-symbols-outlined text-slate-300 text-4xl mb-2">image</span>
-<span class="text-[10px] text-slate-400 text-center uppercase font-bold">Thylakoid Stacks</span>
-</div>
-</div>
-<div class="flex items-center gap-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">gallery_thumbnail</span> Gallery Module</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">timer</span> 8 mins</span>
-</div>
-</div>
-</div>
-<!-- Add Component Bar -->
-<div class="mt-4 flex flex-col items-center gap-4">
-<div class="h-px w-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-<span class="bg-white dark:bg-slate-900 px-4 text-xs font-bold text-slate-400 uppercase tracking-tighter">Quick Add</span>
-</div>
-<div class="flex flex-wrap justify-center gap-3">
-<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold hover:border-primary hover:text-primary transition-all shadow-sm">
-<span class="material-symbols-outlined text-sm">text_snippet</span>
-                                                Text
-                                            </button>
-<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold hover:border-primary hover:text-primary transition-all shadow-sm">
-<span class="material-symbols-outlined text-sm">image</span>
-                                                Image
-                                            </button>
-<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold hover:border-primary hover:text-primary transition-all shadow-sm">
-<span class="material-symbols-outlined text-sm">smart_display</span>
-                                                Video
-                                            </button>
-<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold hover:border-primary hover:text-primary transition-all shadow-sm">
-<span class="material-symbols-outlined text-sm">quiz</span>
-                                                Quiz
-                                            </button>
-<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold hover:border-primary hover:text-primary transition-all shadow-sm">
-<span class="material-symbols-outlined text-sm">attachment</span>
-                                                Resource
-                                            </button>
-</div>
-</div>
-</div>
-<div class="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 px-6 py-4 flex justify-between items-center">
-<span class="text-xs font-medium text-slate-500 uppercase">Estimated Total Time: <span class="text-slate-900 dark:text-slate-100 font-bold ml-1">25 Minutes</span></span>
-<div class="flex gap-3">
-<button class="text-xs font-bold text-slate-500 hover:text-slate-900">Reset Content</button>
-<button class="bg-primary text-slate-900 px-6 py-2 rounded-lg text-sm font-bold shadow-md hover:opacity-90 transition-opacity">Finalize Lesson</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-</div>
-</body></html>
+                  </div>
+                  <div class="p-6 flex flex-col gap-6">
+                    <!-- Content Block 1: Intro -->
+                    <div
+                      class="group relative p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 hover:border-primary/40 transition-all bg-white dark:bg-slate-900"
+                    >
+                      <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                          <span
+                            class="material-symbols-outlined text-slate-400 cursor-move"
+                            >drag_indicator</span
+                          >
+                          <span
+                            class="flex items-center justify-center size-8 rounded-lg bg-primary/10 text-primary text-sm font-bold"
+                            >1</span
+                          >
+                          <h4
+                            class="font-bold text-slate-800 dark:text-slate-200"
+                          >
+                            Introduction to Light Conversion
+                          </h4>
+                        </div>
+                        <div
+                          class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                        >
+                          <button
+                            class="size-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >edit</span
+                            >
+                          </button>
+                          <button
+                            class="size-8 flex items-center justify-center rounded-lg hover:bg-red-50 text-red-500"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >delete</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                      <div class="pl-11 pr-4">
+                        <p
+                          class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4"
+                        >
+                          Start with the fundamental question: How do plants
+                          eat? Explain that while humans consume organic matter,
+                          plants synthesize it using sunlight, water, and CO2.
+                        </p>
+                        <div
+                          class="flex items-center gap-4 text-xs font-bold text-slate-400 uppercase tracking-widest"
+                        >
+                          <span class="flex items-center gap-1"
+                            ><span class="material-symbols-outlined text-sm"
+                              >text_fields</span
+                            >
+                            Text Content</span
+                          >
+                          <span class="flex items-center gap-1"
+                            ><span class="material-symbols-outlined text-sm"
+                              >timer</span
+                            >
+                            5 mins</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Content Block 2: Interactive Video -->
+                    <div
+                      class="group relative p-4 rounded-xl border-2 border-primary/20 bg-primary/5 transition-all"
+                    >
+                      <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                          <span
+                            class="material-symbols-outlined text-slate-400 cursor-move"
+                            >drag_indicator</span
+                          >
+                          <span
+                            class="flex items-center justify-center size-8 rounded-lg bg-primary/20 text-primary text-sm font-bold"
+                            >2</span
+                          >
+                          <h4
+                            class="font-bold text-slate-800 dark:text-slate-200"
+                          >
+                            Chemical Pathway Animation
+                          </h4>
+                        </div>
+                        <div class="flex gap-2">
+                          <button
+                            class="size-8 flex items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-slate-500 shadow-sm"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >edit</span
+                            >
+                          </button>
+                          <button
+                            class="size-8 flex items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-red-500 shadow-sm"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >delete</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                      <div class="pl-11 pr-4">
+                        <div
+                          class="aspect-video w-full max-w-md rounded-lg overflow-hidden relative mb-4 shadow-lg"
+                        >
+                          <div
+                            class="absolute inset-0 bg-slate-800 flex items-center justify-center"
+                            data-alt="Dark green abstract background for video placeholder"
+                            style="
+                              background-image: linear-gradient(
+                                45deg,
+                                #162210,
+                                #2c4a1b
+                              );
+                            "
+                          >
+                            <span
+                              class="material-symbols-outlined text-white text-6xl"
+                              >play_circle</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center gap-4 text-xs font-bold text-primary uppercase tracking-widest"
+                        >
+                          <span class="flex items-center gap-1"
+                            ><span class="material-symbols-outlined text-sm"
+                              >videocam</span
+                            >
+                            Video Module</span
+                          >
+                          <span class="flex items-center gap-1"
+                            ><span class="material-symbols-outlined text-sm"
+                              >timer</span
+                            >
+                            12 mins</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Content Block 3: Diagram Upload -->
+                    <div
+                      class="group relative p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 hover:border-primary/40 transition-all bg-white dark:bg-slate-900"
+                    >
+                      <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                          <span
+                            class="material-symbols-outlined text-slate-400 cursor-move"
+                            >drag_indicator</span
+                          >
+                          <span
+                            class="flex items-center justify-center size-8 rounded-lg bg-primary/10 text-primary text-sm font-bold"
+                            >3</span
+                          >
+                          <h4
+                            class="font-bold text-slate-800 dark:text-slate-200"
+                          >
+                            Chloroplast Anatomy
+                          </h4>
+                        </div>
+                        <div
+                          class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                        >
+                          <button
+                            class="size-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >edit</span
+                            >
+                          </button>
+                          <button
+                            class="size-8 flex items-center justify-center rounded-lg hover:bg-red-50 text-red-500"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >delete</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                      <div class="pl-11 pr-4">
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                          <div
+                            class="aspect-square rounded-lg bg-slate-50 dark:bg-slate-800 border-2 border-dashed border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center p-4"
+                          >
+                            <span
+                              class="material-symbols-outlined text-slate-300 text-4xl mb-2"
+                              >image</span
+                            >
+                            <span
+                              class="text-[10px] text-slate-400 text-center uppercase font-bold"
+                              >Outer Membrane</span
+                            >
+                          </div>
+                          <div
+                            class="aspect-square rounded-lg bg-slate-50 dark:bg-slate-800 border-2 border-dashed border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center p-4"
+                          >
+                            <span
+                              class="material-symbols-outlined text-slate-300 text-4xl mb-2"
+                              >image</span
+                            >
+                            <span
+                              class="text-[10px] text-slate-400 text-center uppercase font-bold"
+                              >Thylakoid Stacks</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center gap-4 text-xs font-bold text-slate-400 uppercase tracking-widest"
+                        >
+                          <span class="flex items-center gap-1"
+                            ><span class="material-symbols-outlined text-sm"
+                              >gallery_thumbnail</span
+                            >
+                            Gallery Module</span
+                          >
+                          <span class="flex items-center gap-1"
+                            ><span class="material-symbols-outlined text-sm"
+                              >timer</span
+                            >
+                            8 mins</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Add Component Bar -->
+                    <div class="mt-4 flex flex-col items-center gap-4">
+                      <div
+                        class="h-px w-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center"
+                      >
+                        <span
+                          class="bg-white dark:bg-slate-900 px-4 text-xs font-bold text-slate-400 uppercase tracking-tighter"
+                          >Quick Add</span
+                        >
+                      </div>
+                      <div class="flex flex-wrap justify-center gap-3">
+                        <button
+                          class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold hover:border-primary hover:text-primary transition-all shadow-sm"
+                        >
+                          <span class="material-symbols-outlined text-sm"
+                            >text_snippet</span
+                          >
+                          Text
+                        </button>
+                        <button
+                          class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold hover:border-primary hover:text-primary transition-all shadow-sm"
+                        >
+                          <span class="material-symbols-outlined text-sm"
+                            >image</span
+                          >
+                          Image
+                        </button>
+                        <button
+                          class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold hover:border-primary hover:text-primary transition-all shadow-sm"
+                        >
+                          <span class="material-symbols-outlined text-sm"
+                            >smart_display</span
+                          >
+                          Video
+                        </button>
+                        <button
+                          class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold hover:border-primary hover:text-primary transition-all shadow-sm"
+                        >
+                          <span class="material-symbols-outlined text-sm"
+                            >quiz</span
+                          >
+                          Quiz
+                        </button>
+                        <button
+                          class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold hover:border-primary hover:text-primary transition-all shadow-sm"
+                        >
+                          <span class="material-symbols-outlined text-sm"
+                            >attachment</span
+                          >
+                          Resource
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 px-6 py-4 flex justify-between items-center"
+                  >
+                    <span class="text-xs font-medium text-slate-500 uppercase"
+                      >Estimated Total Time:
+                      <span
+                        class="text-slate-900 dark:text-slate-100 font-bold ml-1"
+                        >25 Minutes</span
+                      ></span
+                    >
+                    <div class="flex gap-3">
+                      <button
+                        class="text-xs font-bold text-slate-500 hover:text-slate-900"
+                      >
+                        Reset Content
+                      </button>
+                      <button
+                        class="bg-primary text-slate-900 px-6 py-2 rounded-lg text-sm font-bold shadow-md hover:opacity-90 transition-opacity"
+                      >
+                        Finalize Lesson
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,176 +1,277 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#5bec13",
-                        "background-light": "#f6f8f6",
-                        "background-dark": "#162210",
-                    },
-                    fontFamily: {
-                        "display": ["Lexend"]
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#5bec13',
+              'background-light': '#f6f8f6',
+              'background-dark': '#162210',
             },
-        }
+            fontFamily: {
+              display: ['Lexend'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
     </script>
-<title>Year Levels Management</title>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <title>Year Levels Management</title>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
-<div class="max-w-md mx-auto bg-white dark:bg-slate-900 min-h-screen shadow-xl flex flex-col">
-<!-- Header -->
-<header class="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-800 sticky top-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-10">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-slate-600 dark:text-slate-400 cursor-pointer">arrow_back</span>
-<h1 class="text-xl font-bold tracking-tight">Year Levels</h1>
-</div>
-<div class="flex items-center gap-2">
-<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
-<span class="material-symbols-outlined">search</span>
-</button>
-<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</header>
-<!-- Stats Overview -->
-<div class="p-4 grid grid-cols-2 gap-4">
-<div class="bg-primary/10 dark:bg-primary/5 border border-primary/20 p-4 rounded-xl">
-<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Total Levels</p>
-<p class="text-2xl font-bold text-slate-900 dark:text-slate-100">6</p>
-</div>
-<div class="bg-primary/10 dark:bg-primary/5 border border-primary/20 p-4 rounded-xl">
-<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Total Students</p>
-<p class="text-2xl font-bold text-slate-900 dark:text-slate-100">450</p>
-</div>
-</div>
-<!-- Section Header -->
-<div class="px-4 py-2 flex items-center justify-between">
-<h2 class="text-lg font-bold">Academic Grades</h2>
-<button class="flex items-center gap-1 text-sm font-semibold bg-primary text-slate-900 px-3 py-1.5 rounded-full hover:opacity-90 transition-opacity">
-<span class="material-symbols-outlined text-sm">add</span>
-                Add New
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen"
+  >
+    <div
+      class="max-w-md mx-auto bg-white dark:bg-slate-900 min-h-screen shadow-xl flex flex-col"
+    >
+      <!-- Header -->
+      <header
+        class="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-800 sticky top-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-10"
+      >
+        <div class="flex items-center gap-3">
+          <span
+            class="material-symbols-outlined text-slate-600 dark:text-slate-400 cursor-pointer"
+            >arrow_back</span
+          >
+          <h1 class="text-xl font-bold tracking-tight">Year Levels</h1>
+        </div>
+        <div class="flex items-center gap-2">
+          <button
+            class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
+          >
+            <span class="material-symbols-outlined">search</span>
+          </button>
+          <button
+            class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
+          >
+            <span class="material-symbols-outlined">more_vert</span>
+          </button>
+        </div>
+      </header>
+      <!-- Stats Overview -->
+      <div class="p-4 grid grid-cols-2 gap-4">
+        <div
+          class="bg-primary/10 dark:bg-primary/5 border border-primary/20 p-4 rounded-xl"
+        >
+          <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">
+            Total Levels
+          </p>
+          <p class="text-2xl font-bold text-slate-900 dark:text-slate-100">6</p>
+        </div>
+        <div
+          class="bg-primary/10 dark:bg-primary/5 border border-primary/20 p-4 rounded-xl"
+        >
+          <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">
+            Total Students
+          </p>
+          <p class="text-2xl font-bold text-slate-900 dark:text-slate-100">
+            450
+          </p>
+        </div>
+      </div>
+      <!-- Section Header -->
+      <div class="px-4 py-2 flex items-center justify-between">
+        <h2 class="text-lg font-bold">Academic Grades</h2>
+        <button
+          class="flex items-center gap-1 text-sm font-semibold bg-primary text-slate-900 px-3 py-1.5 rounded-full hover:opacity-90 transition-opacity"
+        >
+          <span class="material-symbols-outlined text-sm">add</span>
+          Add New
+        </button>
+      </div>
+      <!-- List of Levels -->
+      <main class="flex-1 px-4 py-2 space-y-3">
+        <!-- Level Item -->
+        <div
+          class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-xl"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="size-12 rounded-lg bg-primary/20 flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-primary"
+                >potted_plant</span
+              >
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-slate-100">
+                Grade 12
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400">
+                120 Students • 4 Sections
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-1">
+            <button
+              class="p-2 text-slate-400 hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]">edit</span>
             </button>
-</div>
-<!-- List of Levels -->
-<main class="flex-1 px-4 py-2 space-y-3">
-<!-- Level Item -->
-<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-xl">
-<div class="flex items-center gap-4">
-<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">potted_plant</span>
-</div>
-<div>
-<h3 class="font-bold text-slate-900 dark:text-slate-100">Grade 12</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400">120 Students • 4 Sections</p>
-</div>
-</div>
-<div class="flex gap-1">
-<button class="p-2 text-slate-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">edit</span>
-</button>
-<button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
-<span class="material-symbols-outlined text-[20px]">delete</span>
-</button>
-</div>
-</div>
-<!-- Level Item -->
-<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-xl">
-<div class="flex items-center gap-4">
-<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">agriculture</span>
-</div>
-<div>
-<h3 class="font-bold text-slate-900 dark:text-slate-100">Grade 11</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400">115 Students • 3 Sections</p>
-</div>
-</div>
-<div class="flex gap-1">
-<button class="p-2 text-slate-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">edit</span>
-</button>
-<button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
-<span class="material-symbols-outlined text-[20px]">delete</span>
-</button>
-</div>
-</div>
-<!-- Level Item -->
-<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-xl">
-<div class="flex items-center gap-4">
-<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">eco</span>
-</div>
-<div>
-<h3 class="font-bold text-slate-900 dark:text-slate-100">Grade 10</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400">98 Students • 3 Sections</p>
-</div>
-</div>
-<div class="flex gap-1">
-<button class="p-2 text-slate-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">edit</span>
-</button>
-<button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
-<span class="material-symbols-outlined text-[20px]">delete</span>
-</button>
-</div>
-</div>
-<!-- Level Item -->
-<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-xl">
-<div class="flex items-center gap-4">
-<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">psychiatry</span>
-</div>
-<div>
-<h3 class="font-bold text-slate-900 dark:text-slate-100">Grade 9</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400">117 Students • 4 Sections</p>
-</div>
-</div>
-<div class="flex gap-1">
-<button class="p-2 text-slate-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">edit</span>
-</button>
-<button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
-<span class="material-symbols-outlined text-[20px]">delete</span>
-</button>
-</div>
-</div>
-</main>
-<!-- Bottom Navigation -->
-<footer class="mt-auto border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-2 py-3">
-<nav class="flex justify-around items-center">
-<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="text-[10px] font-medium">Dashboard</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-primary" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">layers</span>
-<span class="text-[10px] font-medium">Levels</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-<span class="material-symbols-outlined">groups</span>
-<span class="text-[10px] font-medium">Students</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span class="text-[10px] font-medium">Settings</span>
-</a>
-</nav>
-</footer>
-</div>
-</body></html>
+            <button
+              class="p-2 text-slate-400 hover:text-red-500 transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]">delete</span>
+            </button>
+          </div>
+        </div>
+        <!-- Level Item -->
+        <div
+          class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-xl"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="size-12 rounded-lg bg-primary/20 flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-primary"
+                >agriculture</span
+              >
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-slate-100">
+                Grade 11
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400">
+                115 Students • 3 Sections
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-1">
+            <button
+              class="p-2 text-slate-400 hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]">edit</span>
+            </button>
+            <button
+              class="p-2 text-slate-400 hover:text-red-500 transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]">delete</span>
+            </button>
+          </div>
+        </div>
+        <!-- Level Item -->
+        <div
+          class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-xl"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="size-12 rounded-lg bg-primary/20 flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-primary">eco</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-slate-100">
+                Grade 10
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400">
+                98 Students • 3 Sections
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-1">
+            <button
+              class="p-2 text-slate-400 hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]">edit</span>
+            </button>
+            <button
+              class="p-2 text-slate-400 hover:text-red-500 transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]">delete</span>
+            </button>
+          </div>
+        </div>
+        <!-- Level Item -->
+        <div
+          class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-xl"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="size-12 rounded-lg bg-primary/20 flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-primary"
+                >psychiatry</span
+              >
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 dark:text-slate-100">
+                Grade 9
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400">
+                117 Students • 4 Sections
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-1">
+            <button
+              class="p-2 text-slate-400 hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]">edit</span>
+            </button>
+            <button
+              class="p-2 text-slate-400 hover:text-red-500 transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]">delete</span>
+            </button>
+          </div>
+        </div>
+      </main>
+      <!-- Bottom Navigation -->
+      <footer
+        class="mt-auto border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-2 py-3"
+      >
+        <nav class="flex justify-around items-center">
+          <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="text-[10px] font-medium">Dashboard</span>
+          </a>
+          <a class="flex flex-col items-center gap-1 text-primary" href="#">
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: 'FILL' 1"
+              >layers</span
+            >
+            <span class="text-[10px] font-medium">Levels</span>
+          </a>
+          <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+            <span class="material-symbols-outlined">groups</span>
+            <span class="text-[10px] font-medium">Students</span>
+          </a>
+          <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+            <span class="material-symbols-outlined">settings</span>
+            <span class="text-[10px] font-medium">Settings</span>
+          </a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

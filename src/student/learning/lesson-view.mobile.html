@@ -1,156 +1,248 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Organic Composting - Interactive Lesson</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              colors: {
-                "primary": "#5bec13",
-                "background-light": "#f6f8f6",
-                "background-dark": "#162210",
-              },
-              fontFamily: {
-                "display": ["Lexend"]
-              },
-              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Organic Composting - Interactive Lesson</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#5bec13',
+              'background-light': '#f6f8f6',
+              'background-dark': '#162210',
+            },
+            fontFamily: {
+              display: ['Lexend'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
             },
           },
-        }
+        },
+      };
     </script>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
-<!-- Header Navigation -->
-<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
-<div class="flex items-center p-4 justify-between max-w-2xl mx-auto">
-<div class="flex items-center gap-3">
-<div class="text-slate-900 dark:text-slate-100 flex size-10 items-center justify-center rounded-full hover:bg-primary/10 cursor-pointer">
-<span class="material-symbols-outlined">arrow_back</span>
-</div>
-<div>
-<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Organic Composting</h2>
-<p class="text-xs text-slate-500 dark:text-slate-400">Module 2: The Art of Layering</p>
-</div>
-</div>
-<button class="flex size-10 items-center justify-center rounded-full hover:bg-primary/10">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</header>
-<main class="max-w-2xl mx-auto pb-24">
-<!-- Progress Bar -->
-<div class="flex flex-col gap-2 p-4 pt-6">
-<div class="flex justify-between items-end">
-<span class="text-xs font-bold uppercase tracking-wider text-primary">Lesson Progress</span>
-<span class="text-sm font-semibold">60% Complete</span>
-</div>
-<div class="h-3 w-full rounded-full bg-primary/20 overflow-hidden">
-<div class="h-full rounded-full bg-primary" style="width: 60%;"></div>
-</div>
-</div>
-<!-- Lesson Introduction -->
-<section class="px-4 py-6">
-<h1 class="text-3xl font-extrabold tracking-tight mb-4">Understanding Compost Layers</h1>
-<p class="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-                Think of your compost pile like a lasagna. For the best results, you need to balance <strong>"Greens"</strong> (Nitrogen) and <strong>"Browns"</strong> (Carbon) in distinct layers to encourage healthy microbial activity.
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen"
+  >
+    <!-- Header Navigation -->
+    <header
+      class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10"
+    >
+      <div class="flex items-center p-4 justify-between max-w-2xl mx-auto">
+        <div class="flex items-center gap-3">
+          <div
+            class="text-slate-900 dark:text-slate-100 flex size-10 items-center justify-center rounded-full hover:bg-primary/10 cursor-pointer"
+          >
+            <span class="material-symbols-outlined">arrow_back</span>
+          </div>
+          <div>
+            <h2
+              class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight"
+            >
+              Organic Composting
+            </h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+              Module 2: The Art of Layering
             </p>
-</section>
-<!-- Interactive Diagram Placeholder -->
-<section class="px-4 py-8">
-<div class="relative w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-xl border-2 border-dashed border-primary/30 flex flex-col items-center justify-center overflow-hidden group">
-<div class="absolute inset-0 flex flex-col p-4 space-y-2">
-<!-- Layer 4: Greens -->
-<div class="h-1/4 w-full bg-primary/40 rounded-lg flex items-center justify-between px-6 border border-primary/20">
-<span class="font-bold">Fresh Greens</span>
-<span class="material-symbols-outlined text-primary">info</span>
-</div>
-<!-- Layer 3: Browns -->
-<div class="h-1/4 w-full bg-amber-800/20 rounded-lg flex items-center justify-between px-6 border border-amber-800/10">
-<span class="font-bold">Dry Browns</span>
-<span class="material-symbols-outlined">info</span>
-</div>
-<!-- Layer 2: Greens -->
-<div class="h-1/4 w-full bg-primary/40 rounded-lg flex items-center justify-between px-6 border border-primary/20">
-<span class="font-bold">Kitchen Scraps</span>
-<span class="material-symbols-outlined text-primary">info</span>
-</div>
-<!-- Layer 1: Base -->
-<div class="h-1/4 w-full bg-amber-900/40 rounded-lg flex items-center justify-between px-6 border border-amber-900/20">
-<span class="font-bold">Twigs &amp; Straw</span>
-<span class="material-symbols-outlined">info</span>
-</div>
-</div>
-<div class="absolute bottom-4 right-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold shadow-sm">
-                    Interactive Diagram: Tap layers to explore
-                </div>
-<img class="hidden" data-alt="Close up of rich organic soil and compost layers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCcPdrZI7PoG1RbbObwIEY6c3BsFRqIOFjvpm-DyLIS0VWNUF_KqQYl8NpMaWvzPc98PGgVzDSBZnz8QAV_pDyUFwHU8NWPO482RvUFSECIxFrUzYQRVuAqS25fgHNzEQbGAOwbf6f9RxqNlXgRD69jIGvu6T3Xxunlyw8e5oJ-JsqgTrC6lwDuKDTKOa-TBy9Izf51ikHk8-XURSqPHlSC7lFw7AEX0Eli3DkqxdqCA3ck0MhVC2xutTQlU900Wr14lj0tQhmx65d"/>
-</div>
-</section>
-<!-- Step-by-Step Instructions -->
-<section class="px-4 space-y-6">
-<div class="flex gap-4 items-start">
-<div class="flex-none size-8 rounded-full bg-primary text-slate-900 flex items-center justify-center font-bold">1</div>
-<div>
-<h3 class="text-xl font-bold mb-1">The Foundation (Browns)</h3>
-<p class="text-slate-600 dark:text-slate-400">Start with 4-6 inches of coarse materials like twigs or straw. This provides essential aeration at the bottom of the pile.</p>
-</div>
-</div>
-<div class="flex gap-4 items-start">
-<div class="flex-none size-8 rounded-full bg-primary text-slate-900 flex items-center justify-center font-bold">2</div>
-<div>
-<h3 class="text-xl font-bold mb-1">The Nitrogen Kick (Greens)</h3>
-<p class="text-slate-600 dark:text-slate-400">Add kitchen scraps, fresh grass clippings, or manure. These nitrogen-rich materials provide the energy for microbes to grow.</p>
-</div>
-</div>
-<div class="flex gap-4 items-start">
-<div class="flex-none size-8 rounded-full bg-primary text-slate-900 flex items-center justify-center font-bold">3</div>
-<div>
-<h3 class="text-xl font-bold mb-1">The Carbon Cover (Browns)</h3>
-<p class="text-slate-600 dark:text-slate-400">Cover greens with more browns (shredded paper, cardboard, or dry leaves) to keep moisture in and odors down.</p>
-</div>
-</div>
-</section>
-<!-- Knowledge Check Button -->
-<section class="p-4 pt-12">
-<button class="w-full bg-primary py-5 rounded-xl text-slate-900 font-extrabold text-lg flex items-center justify-center gap-3 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-transform">
-<span class="material-symbols-outlined">quiz</span>
-                Knowledge Check
-            </button>
-<p class="text-center text-xs text-slate-500 mt-4">Complete the quiz to unlock the next module</p>
-</section>
-</main>
-<!-- Bottom Navigation Bar -->
-<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-4 pb-6 pt-2 z-50">
-<div class="max-w-2xl mx-auto flex justify-around items-center">
-<a class="flex flex-col items-center gap-1 text-primary" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">menu_book</span>
-<span class="text-[10px] font-bold uppercase tracking-tight">Learn</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-<span class="material-symbols-outlined">explore</span>
-<span class="text-[10px] font-bold uppercase tracking-tight">Explore</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-<span class="material-symbols-outlined">assignment_turned_in</span>
-<span class="text-[10px] font-bold uppercase tracking-tight">Tasks</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-<span class="material-symbols-outlined">person</span>
-<span class="text-[10px] font-bold uppercase tracking-tight">Profile</span>
-</a>
-</div>
-</nav>
-</body></html>
+          </div>
+        </div>
+        <button
+          class="flex size-10 items-center justify-center rounded-full hover:bg-primary/10"
+        >
+          <span class="material-symbols-outlined">more_vert</span>
+        </button>
+      </div>
+    </header>
+    <main class="max-w-2xl mx-auto pb-24">
+      <!-- Progress Bar -->
+      <div class="flex flex-col gap-2 p-4 pt-6">
+        <div class="flex justify-between items-end">
+          <span class="text-xs font-bold uppercase tracking-wider text-primary"
+            >Lesson Progress</span
+          >
+          <span class="text-sm font-semibold">60% Complete</span>
+        </div>
+        <div class="h-3 w-full rounded-full bg-primary/20 overflow-hidden">
+          <div class="h-full rounded-full bg-primary" style="width: 60%"></div>
+        </div>
+      </div>
+      <!-- Lesson Introduction -->
+      <section class="px-4 py-6">
+        <h1 class="text-3xl font-extrabold tracking-tight mb-4">
+          Understanding Compost Layers
+        </h1>
+        <p class="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+          Think of your compost pile like a lasagna. For the best results, you
+          need to balance <strong>"Greens"</strong> (Nitrogen) and
+          <strong>"Browns"</strong> (Carbon) in distinct layers to encourage
+          healthy microbial activity.
+        </p>
+      </section>
+      <!-- Interactive Diagram Placeholder -->
+      <section class="px-4 py-8">
+        <div
+          class="relative w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-xl border-2 border-dashed border-primary/30 flex flex-col items-center justify-center overflow-hidden group"
+        >
+          <div class="absolute inset-0 flex flex-col p-4 space-y-2">
+            <!-- Layer 4: Greens -->
+            <div
+              class="h-1/4 w-full bg-primary/40 rounded-lg flex items-center justify-between px-6 border border-primary/20"
+            >
+              <span class="font-bold">Fresh Greens</span>
+              <span class="material-symbols-outlined text-primary">info</span>
+            </div>
+            <!-- Layer 3: Browns -->
+            <div
+              class="h-1/4 w-full bg-amber-800/20 rounded-lg flex items-center justify-between px-6 border border-amber-800/10"
+            >
+              <span class="font-bold">Dry Browns</span>
+              <span class="material-symbols-outlined">info</span>
+            </div>
+            <!-- Layer 2: Greens -->
+            <div
+              class="h-1/4 w-full bg-primary/40 rounded-lg flex items-center justify-between px-6 border border-primary/20"
+            >
+              <span class="font-bold">Kitchen Scraps</span>
+              <span class="material-symbols-outlined text-primary">info</span>
+            </div>
+            <!-- Layer 1: Base -->
+            <div
+              class="h-1/4 w-full bg-amber-900/40 rounded-lg flex items-center justify-between px-6 border border-amber-900/20"
+            >
+              <span class="font-bold">Twigs &amp; Straw</span>
+              <span class="material-symbols-outlined">info</span>
+            </div>
+          </div>
+          <div
+            class="absolute bottom-4 right-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold shadow-sm"
+          >
+            Interactive Diagram: Tap layers to explore
+          </div>
+          <img
+            class="hidden"
+            data-alt="Close up of rich organic soil and compost layers"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCcPdrZI7PoG1RbbObwIEY6c3BsFRqIOFjvpm-DyLIS0VWNUF_KqQYl8NpMaWvzPc98PGgVzDSBZnz8QAV_pDyUFwHU8NWPO482RvUFSECIxFrUzYQRVuAqS25fgHNzEQbGAOwbf6f9RxqNlXgRD69jIGvu6T3Xxunlyw8e5oJ-JsqgTrC6lwDuKDTKOa-TBy9Izf51ikHk8-XURSqPHlSC7lFw7AEX0Eli3DkqxdqCA3ck0MhVC2xutTQlU900Wr14lj0tQhmx65d"
+          />
+        </div>
+      </section>
+      <!-- Step-by-Step Instructions -->
+      <section class="px-4 space-y-6">
+        <div class="flex gap-4 items-start">
+          <div
+            class="flex-none size-8 rounded-full bg-primary text-slate-900 flex items-center justify-center font-bold"
+          >
+            1
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-1">The Foundation (Browns)</h3>
+            <p class="text-slate-600 dark:text-slate-400">
+              Start with 4-6 inches of coarse materials like twigs or straw.
+              This provides essential aeration at the bottom of the pile.
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div
+            class="flex-none size-8 rounded-full bg-primary text-slate-900 flex items-center justify-center font-bold"
+          >
+            2
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-1">The Nitrogen Kick (Greens)</h3>
+            <p class="text-slate-600 dark:text-slate-400">
+              Add kitchen scraps, fresh grass clippings, or manure. These
+              nitrogen-rich materials provide the energy for microbes to grow.
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div
+            class="flex-none size-8 rounded-full bg-primary text-slate-900 flex items-center justify-center font-bold"
+          >
+            3
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-1">The Carbon Cover (Browns)</h3>
+            <p class="text-slate-600 dark:text-slate-400">
+              Cover greens with more browns (shredded paper, cardboard, or dry
+              leaves) to keep moisture in and odors down.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Knowledge Check Button -->
+      <section class="p-4 pt-12">
+        <button
+          class="w-full bg-primary py-5 rounded-xl text-slate-900 font-extrabold text-lg flex items-center justify-center gap-3 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-transform"
+        >
+          <span class="material-symbols-outlined">quiz</span>
+          Knowledge Check
+        </button>
+        <p class="text-center text-xs text-slate-500 mt-4">
+          Complete the quiz to unlock the next module
+        </p>
+      </section>
+    </main>
+    <!-- Bottom Navigation Bar -->
+    <nav
+      class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-4 pb-6 pt-2 z-50"
+    >
+      <div class="max-w-2xl mx-auto flex justify-around items-center">
+        <a class="flex flex-col items-center gap-1 text-primary" href="#">
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: 'FILL' 1"
+            >menu_book</span
+          >
+          <span class="text-[10px] font-bold uppercase tracking-tight"
+            >Learn</span
+          >
+        </a>
+        <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+          <span class="material-symbols-outlined">explore</span>
+          <span class="text-[10px] font-bold uppercase tracking-tight"
+            >Explore</span
+          >
+        </a>
+        <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+          <span class="material-symbols-outlined">assignment_turned_in</span>
+          <span class="text-[10px] font-bold uppercase tracking-tight"
+            >Tasks</span
+          >
+        </a>
+        <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+          <span class="material-symbols-outlined">person</span>
+          <span class="text-[10px] font-bold uppercase tracking-tight"
+            >Profile</span
+          >
+        </a>
+      </div>
+    </nav>
+  </body>
+</html>

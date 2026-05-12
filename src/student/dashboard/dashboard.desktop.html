@@ -1,264 +1,472 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#5bec13",
-                        "background-light": "#f6f8f6",
-                        "background-dark": "#162210",
-                        "neutral-light": "#edf2ed",
-                        "neutral-dark": "#24361b",
-                    },
-                    fontFamily: {
-                        "display": ["Lexend"]
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#5bec13',
+              'background-light': '#f6f8f6',
+              'background-dark': '#162210',
+              'neutral-light': '#edf2ed',
+              'neutral-dark': '#24361b',
             },
-        }
+            fontFamily: {
+              display: ['Lexend'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
     </script>
-<style>
-        body {
-            font-family: 'Lexend', sans-serif;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+    <style>
+      body {
+        font-family: 'Lexend', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+      }
     </style>
-</head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
-<div class="flex min-h-screen">
-<!-- Sidebar Navigation -->
-<aside class="w-64 border-r border-primary/10 bg-white dark:bg-background-dark flex flex-col fixed h-full">
-<div class="p-6 flex items-center gap-3">
-<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-background-dark">
-<span class="material-symbols-outlined font-bold">eco</span>
-</div>
-<h2 class="text-xl font-bold tracking-tight">Greenfield</h2>
-</div>
-<nav class="flex-1 px-4 space-y-2 mt-4">
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-background-dark font-semibold" href="#">
-<span class="material-symbols-outlined">home</span>
-<span>Home</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary/10 transition-colors" href="#">
-<span class="material-symbols-outlined text-slate-500">book</span>
-<span>Library</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary/10 transition-colors" href="#">
-<span class="material-symbols-outlined text-slate-500">group</span>
-<span>Community</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary/10 transition-colors" href="#">
-<span class="material-symbols-outlined text-slate-500">person</span>
-<span>Profile</span>
-</a>
-</nav>
-<div class="p-4 mt-auto border-t border-primary/10">
-<div class="flex items-center gap-3 p-2">
-<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="User profile photo of a young male student" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE3C1JTIdgj_NfyqCNZ6bbMM-30AMzI1MYITtQx83JITPiOXUC-LUfnRs6Q2pasPxud47R6bsU_5OiyxOVn11tUVhRzyIaIrvtpZRGvzuVXS0NYe-AnxGUXfw_pVbpRnGcNXOtpNssvNvT08l6DUmyItXiu0_Gt7S57LR0OSPXRXUA4HXaFzoHQNazap80IGrqanIufzfVC1bzhKxTl6jAy06FLqamjyreG7qbKALx3Z3OpZci0ikKTjp0FJ1Jk8EunOflmyZ58o34"/>
-</div>
-<div>
-<p class="text-sm font-bold">Alex Johnson</p>
-<p class="text-xs text-slate-500">Premium Member</p>
-</div>
-</div>
-</div>
-</aside>
-<!-- Main Content Area -->
-<main class="flex-1 ml-64">
-<!-- Header -->
-<header class="h-16 border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10">
-<div class="flex-1 max-w-xl">
-<div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
-<input class="w-full bg-background-light dark:bg-neutral-dark/30 border-none rounded-lg pl-10 pr-4 py-2 focus:ring-2 focus:ring-primary/50 text-sm" placeholder="Search for courses, lessons, or resources..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<button class="p-2 rounded-lg hover:bg-background-light dark:hover:bg-neutral-dark relative">
-<span class="material-symbols-outlined">notifications</span>
-<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border-2 border-white dark:border-background-dark"></span>
-</button>
-<button class="p-2 rounded-lg hover:bg-background-light dark:hover:bg-neutral-dark">
-<span class="material-symbols-outlined">settings</span>
-</button>
-</div>
-</header>
-<div class="p-8 space-y-8">
-<!-- Welcome Section -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-<div>
-<h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-50">Welcome back, Alex!</h1>
-<p class="text-slate-500 mt-1">You're making great progress. You have 3 lessons to complete this week.</p>
-</div>
-<div class="flex items-center gap-2 text-sm font-medium bg-primary/10 text-slate-900 px-4 py-2 rounded-full border border-primary/20">
-<span class="material-symbols-outlined text-base">calendar_today</span>
-<span>Monday, Oct 23</span>
-</div>
-</div>
-<!-- Progress Highlights -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-<div class="lg:col-span-2 bg-white dark:bg-neutral-dark/20 p-6 rounded-xl border border-primary/10 shadow-sm">
-<div class="flex items-center justify-between mb-6">
-<h3 class="font-bold text-lg">Overall Curriculum Progress</h3>
-<span class="text-2xl font-black text-primary">65%</span>
-</div>
-<div class="w-full bg-background-light dark:bg-neutral-dark h-4 rounded-full overflow-hidden mb-4">
-<div class="bg-primary h-full rounded-full" style="width: 65%"></div>
-</div>
-<div class="flex justify-between text-sm text-slate-500 font-medium">
-<span>12 of 18 modules completed</span>
-<span>6 modules remaining</span>
-</div>
-</div>
-<div class="bg-primary p-6 rounded-xl shadow-sm flex flex-col justify-between text-background-dark">
-<div>
-<p class="font-bold text-sm uppercase tracking-wider opacity-80">Next Goal</p>
-<h3 class="text-xl font-black mt-1">Sustainable Energy Final</h3>
-</div>
-<div class="flex items-center justify-between">
-<span class="text-sm font-medium">Due in 2 days</span>
-<button class="bg-background-dark text-white px-4 py-2 rounded-lg text-sm font-bold">Prepare Now</button>
-</div>
-</div>
-</div>
-<!-- Current Modules Grid -->
-<section>
-<div class="flex items-center justify-between mb-6">
-<h2 class="text-xl font-bold">Current Modules</h2>
-<button class="text-primary font-bold text-sm hover:underline">View All Modules</button>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-<!-- Module Card 1 -->
-<div class="bg-white dark:bg-neutral-dark/10 border border-primary/10 rounded-xl overflow-hidden shadow-sm group">
-<div class="h-40 bg-neutral-light dark:bg-neutral-dark relative">
-<img class="w-full h-full object-cover opacity-80" data-alt="Abstract image of green wind turbines and nature" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2sVwOmQy8_1XClx97C_2kw_DstNzOP9TYd5pUqiAatNrpm4lufoM3kY-6AhUU1Ia95DYTvJ52w3B5Pg3dNy5H11lfmnEC1vXx9o95MCL3k9JuylTJJRgS8O50ISbiA0XdItrH4m5uYjnBJERAjoUjMr0f0ladO70gK3CpfeOTOO11P3mz7OV6MWGvNJKU-TNNFXY-0SiWJUp0ixskQUqsyYAxBH1HK_JyRFRsE0RSenA0TKKPfsXM7nNJSj5tTy_J9-037Y38JLQm"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-<span class="bg-primary text-background-dark text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">Active</span>
-</div>
-</div>
-<div class="p-5">
-<h4 class="font-bold text-lg mb-2 group-hover:text-primary transition-colors">Intro to Permaculture</h4>
-<p class="text-sm text-slate-500 mb-4 line-clamp-2">Understanding ecosystem patterns and sustainable design principles for green living.</p>
-<div class="space-y-3">
-<div class="flex justify-between text-xs font-bold uppercase tracking-tighter">
-<span>Progress</span>
-<span>80%</span>
-</div>
-<div class="w-full bg-background-light dark:bg-neutral-dark h-2 rounded-full overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 80%"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Module Card 2 -->
-<div class="bg-white dark:bg-neutral-dark/10 border border-primary/10 rounded-xl overflow-hidden shadow-sm group">
-<div class="h-40 bg-neutral-light dark:bg-neutral-dark relative">
-<img class="w-full h-full object-cover opacity-80" data-alt="Sun shining through solar panels on a rooftop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeIhTOUMXygCogiiKV2vxd4Ft7D3UJLUQbjcM5B66f6RxfS40yqcS7UPyM2HMhk2dUBsBQDo1n-BxbgjtD4XhyPg0QF0OHRvXgHzVpoFetgHQgn6Trxe6sAqDinRP65LahMUZVyjhjctrqws4uzQUNnOQl47ZHd_0_lyvBFsugLflJ8L8ELSi8GKutSuvd99XCD02EiIkKfNAQbH2ja_8ZLmskYWjrwhy3hypUwr5CmIv1q6LY5YezhQgo82gcn_1jDRCjxtd8Y-Dx"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-<span class="bg-primary text-background-dark text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">Active</span>
-</div>
-</div>
-<div class="p-5">
-<h4 class="font-bold text-lg mb-2 group-hover:text-primary transition-colors">Solar Engineering 101</h4>
-<p class="text-sm text-slate-500 mb-4 line-clamp-2">Technical fundamentals of photovoltaic systems and residential installation basics.</p>
-<div class="space-y-3">
-<div class="flex justify-between text-xs font-bold uppercase tracking-tighter">
-<span>Progress</span>
-<span>45%</span>
-</div>
-<div class="w-full bg-background-light dark:bg-neutral-dark h-2 rounded-full overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 45%"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Module Card 3 -->
-<div class="bg-white dark:bg-neutral-dark/10 border border-primary/10 rounded-xl overflow-hidden shadow-sm group">
-<div class="h-40 bg-neutral-light dark:bg-neutral-dark relative">
-<img class="w-full h-full object-cover opacity-80" data-alt="Lush green garden with diverse plants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqZ6hGLDko4KKoCngeFGEmKM1Ju1B8S7sU-FjJlwn0tT7NfcEPs6QCyyLDj5TwonJz428_aBKxHRaaLwrDEjZCd2LEktIolIL9IYpRtFmOgHrAkA5NC-wl-JwUtv2fHG-0wJlwempHO27twhiUj87sY0eYTsD3UQ6EGkqo-k8uqGjG8Na8enkkJvWpY9Nt08QBFiKeI9IDoCDboZb6jB1Xs5Gax-jK2CDqd7j8Ct_nBPtPFXSXZ7cgV1lyxTnfzrczBb-6ShW8o5eb"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-<span class="bg-slate-200 text-slate-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">Upcoming</span>
-</div>
-</div>
-<div class="p-5">
-<h4 class="font-bold text-lg mb-2 group-hover:text-primary transition-colors">Soil Microbiology</h4>
-<p class="text-sm text-slate-500 mb-4 line-clamp-2">An exploration into the living world beneath our feet and its role in carbon sequestration.</p>
-<div class="space-y-3">
-<div class="flex justify-between text-xs font-bold uppercase tracking-tighter">
-<span>Progress</span>
-<span>0%</span>
-</div>
-<div class="w-full bg-background-light dark:bg-neutral-dark h-2 rounded-full overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 0%"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Activity Feed / Secondary Section -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-<section class="bg-white dark:bg-neutral-dark/10 p-6 rounded-xl border border-primary/10">
-<h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">history</span>
-                            Recent Activity
-                        </h3>
-<div class="space-y-4">
-<div class="flex gap-4 items-start">
-<div class="size-2 mt-2 bg-primary rounded-full"></div>
-<div>
-<p class="text-sm font-medium">Completed Lesson 4: "Water Harvesting"</p>
-<p class="text-xs text-slate-500">2 hours ago</p>
-</div>
-</div>
-<div class="flex gap-4 items-start border-t border-primary/5 pt-4">
-<div class="size-2 mt-2 bg-primary rounded-full"></div>
-<div>
-<p class="text-sm font-medium">Earned Badge: "Soil Guardian"</p>
-<p class="text-xs text-slate-500">Yesterday</p>
-</div>
-</div>
-<div class="flex gap-4 items-start border-t border-primary/5 pt-4">
-<div class="size-2 mt-2 bg-slate-300 rounded-full"></div>
-<div>
-<p class="text-sm font-medium">Joined Discussion: "Native Planting Strategies"</p>
-<p class="text-xs text-slate-500">2 days ago</p>
-</div>
-</div>
-</div>
-</section>
-<section class="bg-white dark:bg-neutral-dark/10 p-6 rounded-xl border border-primary/10">
-<h3 class="font-bold text-lg mb-4 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">forum</span>
-                            Community Buzz
-                        </h3>
-<div class="space-y-4">
-<div class="p-3 bg-background-light dark:bg-neutral-dark/30 rounded-lg">
-<p class="text-sm font-bold">How to start a urban garden?</p>
-<p class="text-xs text-slate-500 mt-1">12 new replies • Active in General</p>
-</div>
-<div class="p-3 bg-background-light dark:bg-neutral-dark/30 rounded-lg">
-<p class="text-sm font-bold">Best solar panels for rainy climates?</p>
-<p class="text-xs text-slate-500 mt-1">5 new replies • Active in Tech Support</p>
-</div>
-<button class="w-full py-2 border-2 border-primary/20 rounded-lg text-sm font-bold hover:bg-primary/5 transition-colors">Go to Community</button>
-</div>
-</section>
-</div>
-</div>
-</main>
-</div>
-</body></html>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display"
+  >
+    <div class="flex min-h-screen">
+      <!-- Sidebar Navigation -->
+      <aside
+        class="w-64 border-r border-primary/10 bg-white dark:bg-background-dark flex flex-col fixed h-full"
+      >
+        <div class="p-6 flex items-center gap-3">
+          <div
+            class="size-8 bg-primary rounded-lg flex items-center justify-center text-background-dark"
+          >
+            <span class="material-symbols-outlined font-bold">eco</span>
+          </div>
+          <h2 class="text-xl font-bold tracking-tight">Greenfield</h2>
+        </div>
+        <nav class="flex-1 px-4 space-y-2 mt-4">
+          <a
+            class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-background-dark font-semibold"
+            href="#"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <span>Home</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary/10 transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-slate-500">book</span>
+            <span>Library</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary/10 transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-slate-500">group</span>
+            <span>Community</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary/10 transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-slate-500">person</span>
+            <span>Profile</span>
+          </a>
+        </nav>
+        <div class="p-4 mt-auto border-t border-primary/10">
+          <div class="flex items-center gap-3 p-2">
+            <div
+              class="size-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="User profile photo of a young male student"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE3C1JTIdgj_NfyqCNZ6bbMM-30AMzI1MYITtQx83JITPiOXUC-LUfnRs6Q2pasPxud47R6bsU_5OiyxOVn11tUVhRzyIaIrvtpZRGvzuVXS0NYe-AnxGUXfw_pVbpRnGcNXOtpNssvNvT08l6DUmyItXiu0_Gt7S57LR0OSPXRXUA4HXaFzoHQNazap80IGrqanIufzfVC1bzhKxTl6jAy06FLqamjyreG7qbKALx3Z3OpZci0ikKTjp0FJ1Jk8EunOflmyZ58o34"
+              />
+            </div>
+            <div>
+              <p class="text-sm font-bold">Alex Johnson</p>
+              <p class="text-xs text-slate-500">Premium Member</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- Main Content Area -->
+      <main class="flex-1 ml-64">
+        <!-- Header -->
+        <header
+          class="h-16 border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10"
+        >
+          <div class="flex-1 max-w-xl">
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                >search</span
+              >
+              <input
+                class="w-full bg-background-light dark:bg-neutral-dark/30 border-none rounded-lg pl-10 pr-4 py-2 focus:ring-2 focus:ring-primary/50 text-sm"
+                placeholder="Search for courses, lessons, or resources..."
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <button
+              class="p-2 rounded-lg hover:bg-background-light dark:hover:bg-neutral-dark relative"
+            >
+              <span class="material-symbols-outlined">notifications</span>
+              <span
+                class="absolute top-2 right-2 size-2 bg-primary rounded-full border-2 border-white dark:border-background-dark"
+              ></span>
+            </button>
+            <button
+              class="p-2 rounded-lg hover:bg-background-light dark:hover:bg-neutral-dark"
+            >
+              <span class="material-symbols-outlined">settings</span>
+            </button>
+          </div>
+        </header>
+        <div class="p-8 space-y-8">
+          <!-- Welcome Section -->
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-4"
+          >
+            <div>
+              <h1
+                class="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-50"
+              >
+                Welcome back, Alex!
+              </h1>
+              <p class="text-slate-500 mt-1">
+                You're making great progress. You have 3 lessons to complete
+                this week.
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-2 text-sm font-medium bg-primary/10 text-slate-900 px-4 py-2 rounded-full border border-primary/20"
+            >
+              <span class="material-symbols-outlined text-base"
+                >calendar_today</span
+              >
+              <span>Monday, Oct 23</span>
+            </div>
+          </div>
+          <!-- Progress Highlights -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div
+              class="lg:col-span-2 bg-white dark:bg-neutral-dark/20 p-6 rounded-xl border border-primary/10 shadow-sm"
+            >
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="font-bold text-lg">Overall Curriculum Progress</h3>
+                <span class="text-2xl font-black text-primary">65%</span>
+              </div>
+              <div
+                class="w-full bg-background-light dark:bg-neutral-dark h-4 rounded-full overflow-hidden mb-4"
+              >
+                <div
+                  class="bg-primary h-full rounded-full"
+                  style="width: 65%"
+                ></div>
+              </div>
+              <div
+                class="flex justify-between text-sm text-slate-500 font-medium"
+              >
+                <span>12 of 18 modules completed</span>
+                <span>6 modules remaining</span>
+              </div>
+            </div>
+            <div
+              class="bg-primary p-6 rounded-xl shadow-sm flex flex-col justify-between text-background-dark"
+            >
+              <div>
+                <p
+                  class="font-bold text-sm uppercase tracking-wider opacity-80"
+                >
+                  Next Goal
+                </p>
+                <h3 class="text-xl font-black mt-1">
+                  Sustainable Energy Final
+                </h3>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-medium">Due in 2 days</span>
+                <button
+                  class="bg-background-dark text-white px-4 py-2 rounded-lg text-sm font-bold"
+                >
+                  Prepare Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Current Modules Grid -->
+          <section>
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="text-xl font-bold">Current Modules</h2>
+              <button class="text-primary font-bold text-sm hover:underline">
+                View All Modules
+              </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              <!-- Module Card 1 -->
+              <div
+                class="bg-white dark:bg-neutral-dark/10 border border-primary/10 rounded-xl overflow-hidden shadow-sm group"
+              >
+                <div
+                  class="h-40 bg-neutral-light dark:bg-neutral-dark relative"
+                >
+                  <img
+                    class="w-full h-full object-cover opacity-80"
+                    data-alt="Abstract image of green wind turbines and nature"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2sVwOmQy8_1XClx97C_2kw_DstNzOP9TYd5pUqiAatNrpm4lufoM3kY-6AhUU1Ia95DYTvJ52w3B5Pg3dNy5H11lfmnEC1vXx9o95MCL3k9JuylTJJRgS8O50ISbiA0XdItrH4m5uYjnBJERAjoUjMr0f0ladO70gK3CpfeOTOO11P3mz7OV6MWGvNJKU-TNNFXY-0SiWJUp0ixskQUqsyYAxBH1HK_JyRFRsE0RSenA0TKKPfsXM7nNJSj5tTy_J9-037Y38JLQm"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4"
+                  >
+                    <span
+                      class="bg-primary text-background-dark text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest"
+                      >Active</span
+                    >
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h4
+                    class="font-bold text-lg mb-2 group-hover:text-primary transition-colors"
+                  >
+                    Intro to Permaculture
+                  </h4>
+                  <p class="text-sm text-slate-500 mb-4 line-clamp-2">
+                    Understanding ecosystem patterns and sustainable design
+                    principles for green living.
+                  </p>
+                  <div class="space-y-3">
+                    <div
+                      class="flex justify-between text-xs font-bold uppercase tracking-tighter"
+                    >
+                      <span>Progress</span>
+                      <span>80%</span>
+                    </div>
+                    <div
+                      class="w-full bg-background-light dark:bg-neutral-dark h-2 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="bg-primary h-full rounded-full"
+                        style="width: 80%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Module Card 2 -->
+              <div
+                class="bg-white dark:bg-neutral-dark/10 border border-primary/10 rounded-xl overflow-hidden shadow-sm group"
+              >
+                <div
+                  class="h-40 bg-neutral-light dark:bg-neutral-dark relative"
+                >
+                  <img
+                    class="w-full h-full object-cover opacity-80"
+                    data-alt="Sun shining through solar panels on a rooftop"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeIhTOUMXygCogiiKV2vxd4Ft7D3UJLUQbjcM5B66f6RxfS40yqcS7UPyM2HMhk2dUBsBQDo1n-BxbgjtD4XhyPg0QF0OHRvXgHzVpoFetgHQgn6Trxe6sAqDinRP65LahMUZVyjhjctrqws4uzQUNnOQl47ZHd_0_lyvBFsugLflJ8L8ELSi8GKutSuvd99XCD02EiIkKfNAQbH2ja_8ZLmskYWjrwhy3hypUwr5CmIv1q6LY5YezhQgo82gcn_1jDRCjxtd8Y-Dx"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4"
+                  >
+                    <span
+                      class="bg-primary text-background-dark text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest"
+                      >Active</span
+                    >
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h4
+                    class="font-bold text-lg mb-2 group-hover:text-primary transition-colors"
+                  >
+                    Solar Engineering 101
+                  </h4>
+                  <p class="text-sm text-slate-500 mb-4 line-clamp-2">
+                    Technical fundamentals of photovoltaic systems and
+                    residential installation basics.
+                  </p>
+                  <div class="space-y-3">
+                    <div
+                      class="flex justify-between text-xs font-bold uppercase tracking-tighter"
+                    >
+                      <span>Progress</span>
+                      <span>45%</span>
+                    </div>
+                    <div
+                      class="w-full bg-background-light dark:bg-neutral-dark h-2 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="bg-primary h-full rounded-full"
+                        style="width: 45%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Module Card 3 -->
+              <div
+                class="bg-white dark:bg-neutral-dark/10 border border-primary/10 rounded-xl overflow-hidden shadow-sm group"
+              >
+                <div
+                  class="h-40 bg-neutral-light dark:bg-neutral-dark relative"
+                >
+                  <img
+                    class="w-full h-full object-cover opacity-80"
+                    data-alt="Lush green garden with diverse plants"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqZ6hGLDko4KKoCngeFGEmKM1Ju1B8S7sU-FjJlwn0tT7NfcEPs6QCyyLDj5TwonJz428_aBKxHRaaLwrDEjZCd2LEktIolIL9IYpRtFmOgHrAkA5NC-wl-JwUtv2fHG-0wJlwempHO27twhiUj87sY0eYTsD3UQ6EGkqo-k8uqGjG8Na8enkkJvWpY9Nt08QBFiKeI9IDoCDboZb6jB1Xs5Gax-jK2CDqd7j8Ct_nBPtPFXSXZ7cgV1lyxTnfzrczBb-6ShW8o5eb"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4"
+                  >
+                    <span
+                      class="bg-slate-200 text-slate-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest"
+                      >Upcoming</span
+                    >
+                  </div>
+                </div>
+                <div class="p-5">
+                  <h4
+                    class="font-bold text-lg mb-2 group-hover:text-primary transition-colors"
+                  >
+                    Soil Microbiology
+                  </h4>
+                  <p class="text-sm text-slate-500 mb-4 line-clamp-2">
+                    An exploration into the living world beneath our feet and
+                    its role in carbon sequestration.
+                  </p>
+                  <div class="space-y-3">
+                    <div
+                      class="flex justify-between text-xs font-bold uppercase tracking-tighter"
+                    >
+                      <span>Progress</span>
+                      <span>0%</span>
+                    </div>
+                    <div
+                      class="w-full bg-background-light dark:bg-neutral-dark h-2 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="bg-primary h-full rounded-full"
+                        style="width: 0%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Activity Feed / Secondary Section -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <section
+              class="bg-white dark:bg-neutral-dark/10 p-6 rounded-xl border border-primary/10"
+            >
+              <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary"
+                  >history</span
+                >
+                Recent Activity
+              </h3>
+              <div class="space-y-4">
+                <div class="flex gap-4 items-start">
+                  <div class="size-2 mt-2 bg-primary rounded-full"></div>
+                  <div>
+                    <p class="text-sm font-medium">
+                      Completed Lesson 4: "Water Harvesting"
+                    </p>
+                    <p class="text-xs text-slate-500">2 hours ago</p>
+                  </div>
+                </div>
+                <div
+                  class="flex gap-4 items-start border-t border-primary/5 pt-4"
+                >
+                  <div class="size-2 mt-2 bg-primary rounded-full"></div>
+                  <div>
+                    <p class="text-sm font-medium">
+                      Earned Badge: "Soil Guardian"
+                    </p>
+                    <p class="text-xs text-slate-500">Yesterday</p>
+                  </div>
+                </div>
+                <div
+                  class="flex gap-4 items-start border-t border-primary/5 pt-4"
+                >
+                  <div class="size-2 mt-2 bg-slate-300 rounded-full"></div>
+                  <div>
+                    <p class="text-sm font-medium">
+                      Joined Discussion: "Native Planting Strategies"
+                    </p>
+                    <p class="text-xs text-slate-500">2 days ago</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section
+              class="bg-white dark:bg-neutral-dark/10 p-6 rounded-xl border border-primary/10"
+            >
+              <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary"
+                  >forum</span
+                >
+                Community Buzz
+              </h3>
+              <div class="space-y-4">
+                <div
+                  class="p-3 bg-background-light dark:bg-neutral-dark/30 rounded-lg"
+                >
+                  <p class="text-sm font-bold">How to start a urban garden?</p>
+                  <p class="text-xs text-slate-500 mt-1">
+                    12 new replies • Active in General
+                  </p>
+                </div>
+                <div
+                  class="p-3 bg-background-light dark:bg-neutral-dark/30 rounded-lg"
+                >
+                  <p class="text-sm font-bold">
+                    Best solar panels for rainy climates?
+                  </p>
+                  <p class="text-xs text-slate-500 mt-1">
+                    5 new replies • Active in Tech Support
+                  </p>
+                </div>
+                <button
+                  class="w-full py-2 border-2 border-primary/20 rounded-lg text-sm font-bold hover:bg-primary/5 transition-colors"
+                >
+                  Go to Community
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
