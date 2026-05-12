@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5bec13",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#162210",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab {
+            border-bottom: 3px solid #5bec13;
+            color: #162210;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-background-dark shadow-xl overflow-x-hidden">
+<!-- Header -->
+<div class="flex items-center bg-white dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-100 dark:border-slate-800">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Module Library</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-transparent text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+<!-- Categories Tabs -->
+<div class="bg-white dark:bg-background-dark sticky top-[57px] z-10">
+<div class="flex overflow-x-auto no-scrollbar border-b border-slate-100 dark:border-slate-800 px-2">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-slate-900 dark:text-slate-100 pb-3 pt-4 px-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold">Soil Management</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-4 px-4 whitespace-nowrap" href="#">
+<p class="text-sm font-medium">Organic Fertilizers</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-4 px-4 whitespace-nowrap" href="#">
+<p class="text-sm font-medium">Pest Control</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-4 px-4 whitespace-nowrap" href="#">
+<p class="text-sm font-medium">Harvesting</p>
+</a>
+</div>
+</div>
+<!-- Content Area -->
+<div class="flex flex-col gap-4 p-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">Your Progress</h3>
+<!-- Module Card 1 (In Progress / Downloaded) -->
+<div class="flex flex-col gap-4 rounded-xl bg-white dark:bg-slate-900/50 p-4 border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Soil Health Basics</p>
+<p class="text-primary text-sm font-semibold">85% Complete</p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-1 overflow-hidden">
+<div class="bg-primary h-full w-[85%] rounded-full"></div>
+</div>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg shrink-0" data-alt="Close up of healthy rich farm soil being held in hands" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxBiiOm3Ag3fIiezejzX0d1ZlDZfNmaNJ9vkeNYaFQWzMBgBbdJ1gFWmEm82X_IEhPQqh7Wgo12V_Vsr-bKkd-r3I9jtqdQpf7I_Zm5faeSJBpsOZa8pXPtRl3he1YCK2nYNcI8iPgU5iWragPuwQtIr_mdpNuqipBEjyzRDjSCPM8ysLIPM11Z9FB3WT331tWyMbKIDN3KV0fvB_CqLvogUAbv_TcMTYNKjKZLgNxWkZSjvQE3VI4iBTlq9DvXXwhnLHjfGPfh4Wz");'></div>
+</div>
+<div class="flex justify-between items-center mt-2">
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-primary/10 dark:bg-primary/20 text-slate-900 dark:text-slate-100 gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span>Downloaded</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold">
+                        Continue
+                    </button>
+</div>
+</div>
+<!-- Module Card 2 (Not Downloaded) -->
+<div class="flex flex-col gap-4 rounded-xl bg-white dark:bg-slate-900/50 p-4 border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Composting Techniques</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">12% Complete</p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-1 overflow-hidden">
+<div class="bg-primary h-full w-[12%] rounded-full"></div>
+</div>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg shrink-0" data-alt="A large compost pile being turned by a farmer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA7ty6o-GQDM9JJL6iZm5jT1e9sfTK11CFTkprwqtyd0SX4TgosiWm0PUrtlqM6CmkF_didIcnLvyS-ZOjkZAvELakBUEJ6G3cAvnDLnL_9ndT4H28hLmgUjMqLznnOuwS6FIqYVeQhH6pnwQjSUGgmHZR8JRY9QvO0Dm5O4z4URpASJfzEghZeWtEMEKVKbavSiYUJX9olYCy6PD0wyiL48arh-NrsNNnys2iX_xYtzgM94ffWyoJOUgC7XZhtqkNPc-hynQw5Ai-a");'></div>
+</div>
+<div class="flex justify-between items-center mt-2">
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Download for Offline</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold">
+                        Resume
+                    </button>
+</div>
+</div>
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight mt-2">Recommended</h3>
+<!-- Module Card 3 -->
+<div class="flex flex-col gap-4 rounded-xl bg-white dark:bg-slate-900/50 p-4 border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Crop Rotation Strategy</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Not started</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg shrink-0" data-alt="Wide shot of organized crop fields in different stages" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2rZgIj4K63DDbg9xjGwTef6dG__EIJJSkxBZwERKZgOW4NCNZKS18t-6-IORrxBU6kNRPv-A_H5StjYuRb2cQ9aK4ZXp_QpX22dCje8r4V7dm1uuOe_jSYMom3vezI9zxYfEl_zvYHsUManmbX1bFHrnZ_eUSN8hmunLa-HHFnnSPNUobga-uqM7m4F2SFeCQCS4fOVzSe-whxv2vSuwo5e_hAvPVc01BPKLLtJ5ly2h0-rVc55MYQnqeFp-0yHlx00UEQ8gnHUzl");'></div>
+</div>
+<div class="flex justify-between items-center mt-2">
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Download</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 border-2 border-primary text-slate-900 dark:text-slate-100 text-sm font-bold">
+                        Start Module
+                    </button>
+</div>
+</div>
+<!-- Module Card 4 -->
+<div class="flex flex-col gap-4 rounded-xl bg-white dark:bg-slate-900/50 p-4 border border-slate-100 dark:border-slate-800 shadow-sm mb-20">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Cover Cropping 101</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Not started</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg shrink-0" data-alt="Green clover growing as cover crop in a garden" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1mUKF7Z8dYRMA1Fl7AF6g-q_WUReB3DCL2fcrBAv0yyerdO9NwKimUc3RDnlpDGmfODZ9OBbKmZblLR_bVfMP_c-BnIIhb6PeXnaePGatxYhNpVJBubID-VuuwObu9yZGcru7zqgHh92YjYxTQKGN5dqKIgI0jwGoJ9LjGdlOec-yh9Q4ToTqJ2DWfmxmOJl_xd8_E8MjDSIJNeqquP506YeEKYZkTyV68UfALrR8WPN3BcUR0Se7KkyqsGnHgZYUDxKShOKpImGi");'></div>
+</div>
+<div class="flex justify-between items-center mt-2">
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Download</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 border-2 border-primary text-slate-900 dark:text-slate-100 text-sm font-bold">
+                        Start Module
+                    </button>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 w-full max-w-md bg-white dark:bg-background-dark border-t border-slate-100 dark:border-slate-800 px-4 pb-4 pt-2 flex justify-between gap-2 z-20">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-xs font-medium">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">book_2</span>
+<p class="text-xs font-medium">Library</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">groups</span>
+<p class="text-xs font-medium">Community</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-xs font-medium">Profile</p>
+</a>
+</div>
+</div>
+</body></html>

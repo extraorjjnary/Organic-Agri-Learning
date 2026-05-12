@@ -1,0 +1,605 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Manage Competencies - Neon Scholastic</title>
+    <!-- Google Fonts: Lexend -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols Outlined -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              secondary: '#246d00',
+              'error-container': '#fee2e2',
+              'inverse-primary': '#53e300',
+              'on-surface-variant': '#3e4b36',
+              'surface-container-highest': '#e2e5e2',
+              'surface-tint': '#246d00',
+              'on-secondary': '#ffffff',
+              error: '#ef4444',
+              'surface-variant': '#e2e8f0',
+              'surface-container': '#f1f4f1',
+              'surface-dim': '#d3ddc9',
+              surface: '#f6f8f6',
+              'on-secondary-container': '#267200',
+              'surface-container-high': '#e9ece9',
+              'surface-bright': '#ffffff',
+              'on-error-container': '#991b1b',
+              'primary-fixed-dim': '#53e300',
+              'secondary-fixed-dim': '#88db63',
+              'secondary-fixed': '#a2f87c',
+              'on-primary-fixed': '#062100',
+              'tertiary-container': '#ffbbde',
+              'on-background': '#0f170a',
+              tertiary: '#834d6b',
+              'surface-container-lowest': '#ffffff',
+              'primary-fixed': '#7dff46',
+              'on-primary-container': '#062100',
+              'inverse-surface': '#2a3325',
+              'inverse-on-surface': '#eaf4df',
+              'tertiary-fixed-dim': '#f6b3d6',
+              'on-tertiary-fixed': '#350a26',
+              'tertiary-fixed': '#ffd8ea',
+              'on-tertiary-fixed-variant': '#683653',
+              'on-tertiary-container': '#7c4765',
+              background: '#f6f8f6',
+              'primary-container': '#5bec13',
+              'on-surface': '#0f170a',
+              'outline-variant': '#e2e8f0',
+              'secondary-container': '#a0f579',
+              'on-secondary-fixed': '#062100',
+              'on-primary': '#000000',
+              'on-tertiary': '#ffffff',
+              'on-error': '#ffffff',
+              'surface-container-low': '#f8faf8',
+              primary: '#5bec13',
+              outline: '#cbd5e1',
+              'on-primary-fixed-variant': '#195200',
+              'on-secondary-fixed-variant': '#195200',
+            },
+            fontFamily: {
+              headline: ['Lexend'],
+              body: ['Lexend'],
+              label: ['Lexend'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: 'Lexend', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface">
+    <!-- TopAppBar from JSON -->
+    <header
+      class="fixed top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-sm dark:shadow-none flex justify-between items-center w-full px-8 h-16"
+    >
+      <div class="flex items-center gap-4">
+        <span
+          class="text-xl font-black text-slate-900 dark:text-slate-50 font-lexend tracking-tight"
+          >Neon Scholastic</span
+        >
+      </div>
+      <div class="flex-1 max-w-xl mx-8 hidden md:block">
+        <div class="relative flex items-center">
+          <span class="material-symbols-outlined absolute left-3 text-slate-400"
+            >search</span
+          >
+          <input
+            class="w-full bg-surface-container border-none rounded-xl py-2 pl-10 pr-4 focus:ring-2 focus:ring-primary"
+            placeholder="Search resources..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button
+          class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 rounded-full"
+        >
+          <span class="material-symbols-outlined" data-icon="notifications"
+            >notifications</span
+          >
+        </button>
+        <button
+          class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 rounded-full"
+        >
+          <span class="material-symbols-outlined" data-icon="account_circle"
+            >account_circle</span
+          >
+        </button>
+      </div>
+    </header>
+    <div class="flex pt-16 h-screen overflow-hidden">
+      <!-- SideNavBar from JSON -->
+      <aside
+        class="hidden md:flex flex-col h-full w-64 p-4 gap-2 bg-slate-50 dark:bg-slate-950 border-r border-slate-100 dark:border-slate-800 font-lexend text-sm font-medium"
+      >
+        <div class="flex items-center gap-3 px-2 py-4 mb-4">
+          <div
+            class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20"
+          >
+            <span class="material-symbols-outlined text-on-primary"
+              >school</span
+            >
+          </div>
+          <div>
+            <h2
+              class="text-lg font-black text-slate-900 dark:text-slate-50 leading-none"
+            >
+              AgriAdmin
+            </h2>
+            <p
+              class="text-[10px] text-slate-500 uppercase tracking-widest mt-1"
+            >
+              Organic Scholastic
+            </p>
+          </div>
+        </div>
+        <nav class="flex-1 flex flex-col gap-1">
+          <a
+            class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 rounded-xl transition-all duration-200 ease-in-out"
+            href="#"
+          >
+            <span class="material-symbols-outlined">dashboard</span>
+            <span>Dashboard</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 bg-lime-400/20 text-slate-900 dark:text-lime-400 rounded-xl transition-all duration-200 ease-in-out font-bold"
+            href="#"
+          >
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: 'FILL' 1"
+              >potted_plant</span
+            >
+            <span>Competencies</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 rounded-xl transition-all duration-200 ease-in-out"
+            href="#"
+          >
+            <span class="material-symbols-outlined">menu_book</span>
+            <span>Curriculum</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 rounded-xl transition-all duration-200 ease-in-out"
+            href="#"
+          >
+            <span class="material-symbols-outlined">school</span>
+            <span>Teachers</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 rounded-xl transition-all duration-200 ease-in-out mt-auto"
+            href="#"
+          >
+            <span class="material-symbols-outlined">settings</span>
+            <span>Settings</span>
+          </a>
+        </nav>
+        <button
+          class="mt-4 w-full bg-primary text-on-primary font-bold py-3 rounded-xl shadow-lg shadow-primary/20 hover:opacity-90 transition-all active:scale-95 flex items-center justify-center gap-2"
+        >
+          <span class="material-symbols-outlined text-sm">add</span>
+          New Competency
+        </button>
+      </aside>
+      <!-- Main Content -->
+      <main class="flex-1 overflow-y-auto p-8 bg-surface">
+        <!-- Editorial Header -->
+        <div class="mb-10 max-w-5xl">
+          <h1
+            class="text-[30px] font-black tracking-tight text-on-surface mb-2 font-headline uppercase"
+          >
+            Manage Competencies
+          </h1>
+          <p
+            class="text-on-surface-variant max-w-2xl leading-relaxed font-body"
+          >
+            Define and organize student learning outcomes for the organic
+            agricultural track. Each competency represents a verifiable skill or
+            knowledge milestone required for certification.
+          </p>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-8 max-w-6xl">
+          <!-- Competencies Table (The Electric Archive Table) -->
+          <div class="flex-1">
+            <div
+              class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden"
+            >
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-surface-container-high">
+                    <th
+                      class="px-6 py-4 text-[12px] font-semibold uppercase tracking-wider text-on-surface-variant"
+                    >
+                      Code
+                    </th>
+                    <th
+                      class="px-6 py-4 text-[12px] font-semibold uppercase tracking-wider text-on-surface-variant"
+                    >
+                      Competency Title
+                    </th>
+                    <th
+                      class="px-6 py-4 text-[12px] font-semibold uppercase tracking-wider text-on-surface-variant"
+                    >
+                      Status
+                    </th>
+                    <th
+                      class="px-6 py-4 text-[12px] font-semibold uppercase tracking-wider text-on-surface-variant text-right"
+                    >
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                  <!-- Row 1 -->
+                  <tr class="hover:bg-slate-50/50 transition-colors group">
+                    <td class="px-6 py-5 align-top">
+                      <span
+                        class="bg-surface-container px-2 py-1 rounded text-[12px] font-mono font-bold text-on-surface-variant"
+                        >ROC-01</span
+                      >
+                    </td>
+                    <td class="px-6 py-5">
+                      <div class="font-bold text-slate-900">
+                        Raising Organic Chicken
+                      </div>
+                      <div class="text-[12px] text-slate-500 mt-1 line-clamp-1">
+                        Managing broilers and layers through organic feeding
+                        protocols.
+                      </div>
+                    </td>
+                    <td class="px-6 py-5">
+                      <span
+                        class="inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold bg-primary/20 text-on-surface-variant uppercase tracking-tight"
+                        >Active</span
+                      >
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                      <div
+                        class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
+                        <button
+                          class="p-2 rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors"
+                          title="Edit"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-error-container text-error transition-colors"
+                          title="Delete"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 2 -->
+                  <tr class="hover:bg-slate-50/50 transition-colors group">
+                    <td class="px-6 py-5 align-top">
+                      <span
+                        class="bg-surface-container px-2 py-1 rounded text-[12px] font-mono font-bold text-on-surface-variant"
+                        >POV-02</span
+                      >
+                    </td>
+                    <td class="px-6 py-5">
+                      <div class="font-bold text-slate-900">
+                        Produce Organic Vegetables
+                      </div>
+                      <div class="text-[12px] text-slate-500 mt-1 line-clamp-1">
+                        Crop rotation, natural pest management, and soil health.
+                      </div>
+                    </td>
+                    <td class="px-6 py-5">
+                      <span
+                        class="inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold bg-primary/20 text-on-surface-variant uppercase tracking-tight"
+                        >Active</span
+                      >
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                      <div
+                        class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
+                        <button
+                          class="p-2 rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-error-container text-error transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 3 -->
+                  <tr class="hover:bg-slate-50/50 transition-colors group">
+                    <td class="px-6 py-5 align-top">
+                      <span
+                        class="bg-surface-container px-2 py-1 rounded text-[12px] font-mono font-bold text-on-surface-variant"
+                        >POC-03</span
+                      >
+                    </td>
+                    <td class="px-6 py-5">
+                      <div class="font-bold text-slate-900">
+                        Produce Organic Concoction
+                      </div>
+                      <div class="text-[12px] text-slate-500 mt-1 line-clamp-1">
+                        Fermentation of natural inputs and botanical extracts.
+                      </div>
+                    </td>
+                    <td class="px-6 py-5">
+                      <span
+                        class="inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold bg-primary/20 text-on-surface-variant uppercase tracking-tight"
+                        >Active</span
+                      >
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                      <div
+                        class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
+                        <button
+                          class="p-2 rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-error-container text-error transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 4 -->
+                  <tr class="hover:bg-slate-50/50 transition-colors group">
+                    <td class="px-6 py-5 align-top">
+                      <span
+                        class="bg-surface-container px-2 py-1 rounded text-[12px] font-mono font-bold text-on-surface-variant"
+                        >POF-04</span
+                      >
+                    </td>
+                    <td class="px-6 py-5">
+                      <div class="font-bold text-slate-900">
+                        Produce Organic Fertilizer
+                      </div>
+                      <div class="text-[12px] text-slate-500 mt-1 line-clamp-1">
+                        Composting methods and aerobic liquid fertilizers.
+                      </div>
+                    </td>
+                    <td class="px-6 py-5">
+                      <span
+                        class="inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold bg-primary/20 text-on-surface-variant uppercase tracking-tight"
+                        >Active</span
+                      >
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                      <div
+                        class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
+                        <button
+                          class="p-2 rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 rounded-lg hover:bg-error-container text-error transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-[20px]"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div
+                class="bg-slate-50 px-6 py-4 flex items-center justify-between border-t border-slate-100"
+              >
+                <span class="text-[12px] text-slate-500 font-medium"
+                  >Showing 4 of 12 competencies</span
+                >
+                <div class="flex gap-2">
+                  <button
+                    class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-[12px] font-bold hover:bg-slate-50 transition-colors"
+                  >
+                    Prev
+                  </button>
+                  <button
+                    class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-[12px] font-bold hover:bg-slate-50 transition-colors"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Add New Competency Side Panel (Bento-style Card) -->
+          <div class="w-full lg:w-96">
+            <div
+              class="bg-surface-container-lowest rounded-xl shadow-lg border border-primary/10 overflow-hidden sticky top-8"
+            >
+              <div class="bg-primary p-6">
+                <h3 class="text-on-primary text-lg font-bold">
+                  New Competency
+                </h3>
+                <p
+                  class="text-on-primary/80 text-[12px] font-medium leading-tight mt-1"
+                >
+                  Add a new unit to the curriculum framework.
+                </p>
+              </div>
+              <form class="p-6 space-y-5">
+                <div class="space-y-1.5">
+                  <label
+                    class="text-[11px] font-bold uppercase tracking-wider text-slate-500 px-1"
+                    >Code</label
+                  >
+                  <input
+                    class="w-full bg-surface-container border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary text-sm font-medium"
+                    placeholder="e.g., ROC-01"
+                    type="text"
+                  />
+                </div>
+                <div class="space-y-1.5">
+                  <label
+                    class="text-[11px] font-bold uppercase tracking-wider text-slate-500 px-1"
+                    >Competency Title</label
+                  >
+                  <input
+                    class="w-full bg-surface-container border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary text-sm font-medium"
+                    placeholder="e.g., Raising Organic Chicken"
+                    type="text"
+                  />
+                </div>
+                <div class="space-y-1.5">
+                  <label
+                    class="text-[11px] font-bold uppercase tracking-wider text-slate-500 px-1"
+                    >Department/Category</label
+                  >
+                  <div class="relative">
+                    <select
+                      class="w-full appearance-none bg-surface-container border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary text-sm font-medium pr-10"
+                    >
+                      <option>Animal Production</option>
+                      <option>Crop Production</option>
+                      <option>Waste Management</option>
+                      <option>Post-Harvest Processing</option>
+                    </select>
+                    <span
+                      class="material-symbols-outlined absolute right-3 top-3 text-slate-400 pointer-events-none"
+                      >expand_more</span
+                    >
+                  </div>
+                </div>
+                <div class="space-y-1.5">
+                  <label
+                    class="text-[11px] font-bold uppercase tracking-wider text-slate-500 px-1"
+                    >Description</label
+                  >
+                  <textarea
+                    class="w-full bg-surface-container border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary text-sm font-medium resize-none"
+                    placeholder="Define the core objective..."
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div class="pt-4 flex flex-col gap-3">
+                  <button
+                    class="w-full bg-primary text-on-primary font-bold py-3.5 rounded-xl shadow-lg shadow-primary/20 hover:opacity-95 transition-all active:scale-[0.98]"
+                    type="submit"
+                  >
+                    Create Competency
+                  </button>
+                  <button
+                    class="w-full bg-transparent text-slate-500 text-[12px] font-bold py-2 hover:text-slate-700 transition-colors uppercase tracking-widest"
+                    type="reset"
+                  >
+                    Clear Form
+                  </button>
+                </div>
+              </form>
+            </div>
+            <!-- Quick Help/Insights Card -->
+            <div
+              class="mt-6 p-5 bg-lime-400/5 rounded-xl border border-lime-400/10 flex gap-4"
+            >
+              <div class="p-2 bg-lime-400/10 rounded-lg h-fit">
+                <span class="material-symbols-outlined text-lime-600"
+                  >lightbulb</span
+                >
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-lime-900">Curriculum Tip</h4>
+                <p class="text-[12px] text-lime-800 leading-tight mt-1">
+                  Codes should follow the format [DEPT]-[ID] for consistent
+                  tracking across years.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- Mobile Navigation (BottomNavBar substitute based on Shell visibility rules) -->
+    <nav
+      class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-100 px-6 py-2 flex justify-between items-center z-50"
+    >
+      <button class="flex flex-col items-center gap-1 p-2 text-slate-400">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span class="text-[10px] font-bold">Dash</span>
+      </button>
+      <button class="flex flex-col items-center gap-1 p-2 text-primary">
+        <span
+          class="material-symbols-outlined"
+          style="font-variation-settings: 'FILL' 1"
+          >potted_plant</span
+        >
+        <span class="text-[10px] font-bold">Compet</span>
+      </button>
+      <div class="relative -top-6">
+        <button
+          class="w-14 h-14 bg-primary rounded-full shadow-lg shadow-primary/40 flex items-center justify-center text-on-primary"
+        >
+          <span class="material-symbols-outlined text-[28px]">add</span>
+        </button>
+      </div>
+      <button class="flex flex-col items-center gap-1 p-2 text-slate-400">
+        <span class="material-symbols-outlined">school</span>
+        <span class="text-[10px] font-bold">Staff</span>
+      </button>
+      <button class="flex flex-col items-center gap-1 p-2 text-slate-400">
+        <span class="material-symbols-outlined">settings</span>
+        <span class="text-[10px] font-bold">Setup</span>
+      </button>
+    </nav>
+  </body>
+</html>

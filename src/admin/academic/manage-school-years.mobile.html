@@ -1,0 +1,269 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#5bec13',
+              'background-light': '#f6f8f6',
+              'background-dark': '#162210',
+            },
+            fontFamily: {
+              display: ['Lexend'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: 'Lexend', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen"
+  >
+    <div
+      class="max-w-md mx-auto bg-white dark:bg-slate-900 min-h-screen flex flex-col shadow-xl"
+    >
+      <header
+        class="flex items-center justify-between p-4 border-b border-primary/10 dark:border-primary/20 bg-white dark:bg-slate-900 sticky top-0 z-10"
+      >
+        <div class="flex items-center gap-3">
+          <div class="p-2 rounded-lg bg-primary/10 text-primary">
+            <span class="material-symbols-outlined">arrow_back</span>
+          </div>
+          <h1 class="text-xl font-bold tracking-tight">School Years</h1>
+        </div>
+        <button
+          class="bg-primary text-slate-900 px-4 py-2 rounded-lg font-bold flex items-center gap-2 hover:bg-primary/90 transition-colors"
+        >
+          <span class="material-symbols-outlined text-[20px]">add</span>
+          <span class="text-sm">New Year</span>
+        </button>
+      </header>
+      <nav
+        class="flex border-b border-primary/10 dark:border-primary/20 px-4 bg-white dark:bg-slate-900"
+      >
+        <a
+          class="flex-1 text-center py-4 border-b-2 border-primary text-primary font-semibold text-sm"
+          href="#"
+        >
+          Active
+        </a>
+        <a
+          class="flex-1 text-center py-4 border-b-2 border-transparent text-slate-500 dark:text-slate-400 font-semibold text-sm hover:text-primary"
+          href="#"
+        >
+          Archived
+        </a>
+      </nav>
+      <main class="flex-1 p-4 space-y-4 overflow-y-auto">
+        <div
+          class="p-4 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/20 flex flex-col gap-4"
+        >
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-4">
+              <div
+                class="size-12 rounded-lg bg-primary flex items-center justify-center text-slate-900"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >calendar_today</span
+                >
+              </div>
+              <div>
+                <p class="text-lg font-bold leading-tight">2023-2024</p>
+                <span
+                  class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-primary text-slate-900 mt-1"
+                >
+                  Current
+                </span>
+              </div>
+            </div>
+            <div class="flex gap-1">
+              <button
+                class="p-2 text-slate-500 hover:bg-white/50 dark:hover:bg-black/20 rounded-lg"
+              >
+                <span class="material-symbols-outlined">edit</span>
+              </button>
+              <button
+                class="p-2 text-slate-500 hover:bg-white/50 dark:hover:bg-black/20 rounded-lg"
+              >
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-2 gap-2 text-sm text-slate-600 dark:text-slate-400"
+          >
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm">event</span>
+              Starts: Aug 15, 2023
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm">groups</span>
+              12 Classes
+            </div>
+          </div>
+        </div>
+        <div
+          class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col gap-4"
+        >
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-4">
+              <div
+                class="size-12 rounded-lg bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-500"
+              >
+                <span class="material-symbols-outlined text-3xl">history</span>
+              </div>
+              <div>
+                <p class="text-lg font-bold leading-tight">2022-2023</p>
+                <span
+                  class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 mt-1"
+                >
+                  Archived
+                </span>
+              </div>
+            </div>
+            <div class="flex gap-1">
+              <button
+                class="p-2 text-slate-500 hover:bg-white/50 dark:hover:bg-black/20 rounded-lg"
+              >
+                <span class="material-symbols-outlined">edit</span>
+              </button>
+              <button
+                class="p-2 text-slate-500 hover:bg-white/50 dark:hover:bg-black/20 rounded-lg text-red-500"
+              >
+                <span class="material-symbols-outlined">delete</span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-2 gap-2 text-sm text-slate-600 dark:text-slate-400"
+          >
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm">event</span>
+              Ended: Jun 10, 2023
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm">inventory_2</span>
+              Records Exported
+            </div>
+          </div>
+        </div>
+        <div
+          class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col gap-4"
+        >
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-4">
+              <div
+                class="size-12 rounded-lg bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-500"
+              >
+                <span class="material-symbols-outlined text-3xl">history</span>
+              </div>
+              <div>
+                <p class="text-lg font-bold leading-tight">2021-2022</p>
+                <span
+                  class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 mt-1"
+                >
+                  Archived
+                </span>
+              </div>
+            </div>
+            <div class="flex gap-1">
+              <button
+                class="p-2 text-slate-500 hover:bg-white/50 dark:hover:bg-black/20 rounded-lg"
+              >
+                <span class="material-symbols-outlined">edit</span>
+              </button>
+              <button
+                class="p-2 text-slate-500 hover:bg-white/50 dark:hover:bg-black/20 rounded-lg text-red-500"
+              >
+                <span class="material-symbols-outlined">delete</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="pt-8 pb-4 text-center">
+          <div class="inline-flex flex-col items-center opacity-40">
+            <span class="material-symbols-outlined text-4xl mb-2"
+              >agriculture</span
+            >
+            <p class="text-xs uppercase tracking-widest font-bold">
+              Greenfield Education
+            </p>
+          </div>
+        </div>
+      </main>
+      <footer
+        class="mt-auto border-t border-primary/10 dark:border-primary/20 bg-white dark:bg-slate-900 pb-6 pt-2"
+      >
+        <div class="flex justify-around items-center">
+          <a
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] font-medium">Home</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined">groups</span>
+            <span class="text-[10px] font-medium">Classes</span>
+          </a>
+          <a class="flex flex-col items-center gap-1 text-primary" href="#">
+            <span class="material-symbols-outlined fill-1">calendar_month</span>
+            <span class="text-[10px] font-medium">Years</span>
+          </a>
+          <a
+            class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined">settings</span>
+            <span class="text-[10px] font-medium">Settings</span>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

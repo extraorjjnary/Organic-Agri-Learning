@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5bec13",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#162210",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Module Library - Agricultural Learning</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen flex-col overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-primary/10 bg-white dark:bg-slate-900/50 px-8 py-4 shrink-0">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-lg bg-primary text-slate-900">
+<span class="material-symbols-outlined text-2xl font-bold">grid_view</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">Module Library</h2>
+</div>
+<div class="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2 w-80">
+<span class="material-symbols-outlined text-slate-400">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-slate-400" placeholder="Search modules, topics, or resources..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center size-10 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-semibold">Alex Rivera</p>
+<p class="text-xs text-slate-500">Farm Manager</p>
+</div>
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="User profile portrait showing a smiling man" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuByBlMZtfGzJQ00wdjVTMvCHI9vMXqc_5mZIyHjm8_4CEj_Gx-1V84-jZnuMgfj2pzUs06a23e4fcp2uq6ICj8Y4h1qj0KNaY_RolNb92OEgiJOxZDl0gnMMc7wcdi9JhUBG5a6I2uhDcdGEEPjI_NOXHl_pF1nIhSpc82QGxuHZMPnXGpEIH2fbZUq0DgTpSVY462fYGqG-oEfQoFdtwMpYfDCAbZ2cbdJ04F2xiG_mlFtwNf7eqoUJOuhV_ejBzSFOhCc4Iu-TP8F')"></div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-primary/10 bg-white dark:bg-slate-900/50 flex flex-col p-6 shrink-0">
+<div class="mb-8">
+<h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Categories</h3>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-slate-900 font-semibold group" href="#">
+<span class="material-symbols-outlined text-xl">dataset</span>
+<span>All Modules</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">eco</span>
+<span>Soil Health</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">recycling</span>
+<span>Composting</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">water_drop</span>
+<span>Irrigation</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">pest_control</span>
+<span>Pest Control</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">psychology</span>
+<span>Best Practices</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto">
+<div class="p-4 rounded-xl bg-primary/10 border border-primary/20 mb-4">
+<p class="text-xs font-bold text-primary uppercase mb-1">Storage</p>
+<div class="h-2 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden mb-2">
+<div class="h-full bg-primary" style="width: 65%"></div>
+</div>
+<p class="text-[10px] text-slate-500">1.2GB of 2.0GB used</p>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-slate-900 font-bold text-sm shadow-lg shadow-primary/20 hover:brightness-105 transition-all">
+<span class="material-symbols-outlined text-sm">cloud_upload</span>
+                        Upload Module
+                    </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-8">
+<div class="max-w-6xl mx-auto">
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<h1 class="text-4xl font-black tracking-tight mb-2">Module Library</h1>
+<p class="text-slate-500 dark:text-slate-400 max-w-xl">Browse your collected agricultural knowledge base. Access courses, guides, and technical data sheets offline or online.</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span>Status</span>
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span>Sort: Newest</span>
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+</div>
+</header>
+<!-- Module Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Module Card: Soil Health -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:shadow-primary/5 transition-all">
+<div class="relative aspect-video overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Rich dark soil with a small green plant sprout" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQTVLhRMXFre0twfAOalAw4aGCTqz0QpKc1h20njMtTsZLu_STK1L39aqJqjsz1wHpHIKvGX8Rsp_qf2eM1-Ro47gPbBV4rFK6rOeCNc7I-SPoS_WD6OVOXLfVPMlIeEEQRV1p-7plwOWnx1fkrxJJjk6PnaN8CvAQaC94uyYTK53OwbieU9Mn32RiQrH9iov2OlZR5lmBGalPHQm5a5fOnkuErnbXwy5kTr3R6Bu-zNMs9nIRC24SY7L41cHI9FcIz13UFNBCKHWC')"></div>
+<div class="absolute top-3 right-3">
+<span class="flex items-center gap-1 px-2 py-1 rounded bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+                                        Downloaded
+                                    </span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Soil Health Basics</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">Learn about soil pH, nutrient cycles, and microbiology essential for crop yields.</p>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-slate-400">Progress</span>
+<span class="text-xs font-semibold">100% Complete</span>
+</div>
+<button class="size-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 hover:bg-primary hover:text-slate-900 transition-all">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Module Card: Composting -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:shadow-primary/5 transition-all">
+<div class="relative aspect-video overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Organic compost heap with vegetable scraps" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCB1OjNIYxatR9sH6v_xBwDWclzKLYLmrkN4hZJut4Q3l5vneBajhustukrgzWIPPOQr6_hYwzT_73mFtKGDAJaArXF8Qi3NTHAc5XOLWuHT7i3v3tnXkqIV8MaskDXSNkb-8GVeidc_CnVk3b9S8eBW75MZfQrpL89q1xl53g0URVWF544RBtni7TY5U_zKgxs7qkFNhld1QsJt6uoPLMZ6dYcwywMR34nIVI5iqA0x2R8Q-HFDswUvMkgZHuztsPvNh3WV8n35Kn7')"></div>
+<div class="absolute top-3 right-3">
+<span class="flex items-center gap-1 px-2 py-1 rounded bg-amber-500 text-white text-[10px] font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-xs">sync</span>
+                                        Syncing
+                                    </span>
+</div>
+<div class="absolute bottom-0 left-0 h-1 bg-amber-500 transition-all duration-300" style="width: 45%"></div>
+</div>
+<div class="p-5">
+<h3 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Advanced Composting</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">Master the art of rapid thermal composting and bokashi methods.</p>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-slate-400">Status</span>
+<span class="text-xs font-semibold">45% Synchronized</span>
+</div>
+<button class="size-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined text-sm">pause</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Module Card: Drip Irrigation -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:shadow-primary/5 transition-all">
+<div class="relative aspect-video overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Drip irrigation pipes in a green field" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfCWlYRyhB9jiwoG8vVFdG3Pk6L3sX8306jEQfhrDgJXxwyDZQc7ehj-vabTbEltLG82etmQXP4JaW-x2FEyEkEGnR9ZHxP5YbGeVRLKAOVvktGJvltMyODrzaDzidkAPYxVfZhvVpdF27Fhh6auDNxcJDwa7NzrgiV1q9teUBn--QJWJGS1Dx9Ck-RVbZ3-DCY3l2Ztwkp9QLDo1wDKw24Y3da8k-1a3LrNs_CfSRmcmFB3mueEZgH2IUNJgMx2HIMw9IVAaHt0U7')"></div>
+<div class="absolute top-3 right-3">
+<span class="flex items-center gap-1 px-2 py-1 rounded bg-slate-500 text-white text-[10px] font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-xs">cloud_download</span>
+                                        Available
+                                    </span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Drip Irrigation</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">Efficient water usage techniques for drought-prone farming areas.</p>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-slate-400">Size</span>
+<span class="text-xs font-semibold">124 MB</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-primary/20 text-primary font-bold text-xs hover:bg-primary hover:text-slate-900 transition-all">
+                                        Download
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Module Card: Pest Control -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:shadow-primary/5 transition-all">
+<div class="relative aspect-video overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Ladybug on a green leaf acting as natural pest control" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLAkk5JgWArLwJY7gC3SJ7Y2b6b2u5H-eD3AycaqbHek0y7U8KWDRUJSXyrx-ypcizBn-GKipCc4KkTwFoz11wJCPPStRj5wLo9SUjhZIvr7VZTLlM3AxIO398rtLLWGvI0z6TwDvVPVstq6D9kg9kt_KNyXeCUvtkxqw3n5t_xV-8cKDtZhzHBtGO8NGFGykswlhLcKerah0UtAmUit6HIrvFCqsXXDdTnm7nCpqgRJpw7dHT2baydrXYoGDw8mFnQKwx8XyIyn_8')"></div>
+<div class="absolute top-3 right-3">
+<span class="flex items-center gap-1 px-2 py-1 rounded bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+                                        Downloaded
+                                    </span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Organic Pest Control</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">Natural ways to protect crops without chemical pesticides.</p>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-slate-400">Progress</span>
+<span class="text-xs font-semibold">22% Complete</span>
+</div>
+<button class="size-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 hover:bg-primary hover:text-slate-900 transition-all">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Module Card: Greenhouse Mgmt -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:shadow-primary/5 transition-all">
+<div class="relative aspect-video overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Inside a modern greenhouse with rows of plants" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAuhy3b3fPa8Z4xSent8FZXFTYaVfjexOhhTlfawvoX5vcLK0bjd2n3Ayc6mXBEwRnrCzWqxMxvh9awZbF8VTyebxVCf1gDSwc3QoMehyqwfU4aHEuZ0HkbJL5o63hPIOBAekgd53JjVNdw-SghXfOJqAN3YB2c3Tp1BuY9T-1LeOHbstNk-F5tupiHtEMTxtr8a0u2it2GpIlho5vQ-AF_uloESvKV7z54QQe4jdvseQbh9a-vdUKKdpd13vr9DkLgFadiNnUjpbWn')"></div>
+<div class="absolute top-3 right-3">
+<span class="flex items-center gap-1 px-2 py-1 rounded bg-slate-500 text-white text-[10px] font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-xs">cloud_download</span>
+                                        Available
+                                    </span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Greenhouse Management</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">Controlling climate, humidity, and lighting for year-round growth.</p>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-slate-400">Size</span>
+<span class="text-xs font-semibold">312 MB</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-primary/20 text-primary font-bold text-xs hover:bg-primary hover:text-slate-900 transition-all">
+                                        Download
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Module Card: Cover Crops -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:shadow-primary/5 transition-all">
+<div class="relative aspect-video overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Lush green field with cover crops" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJYLiFcBy0t-GW-bbGcL9dMAXiNhn7_cL4rI47i26Q7g3Aev8m7oZhr2r0-Wb65G--ocotr03NISoH_0MeldINmR0KytwlogS6Ui4i_xDXRUVX1xGgDqOLS293FoGGEk0Z_txRyqrH5PjP-B1rYNPk18qbyaOwk9dpHGyU9IVPaf_WW1Aig2zvJFM8WoU5hefMydEZr4h07poSDfjBiJ33YFJV8uuA2PHKsDsPpqw5-Hb-hJetOEQdqlUK7bj9j8Rlmc14DaoByQbd')"></div>
+<div class="absolute top-3 right-3">
+<span class="flex items-center gap-1 px-2 py-1 rounded bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+                                        Downloaded
+                                    </span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Cover Crop Strategies</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">Protecting soil during off-seasons and improving nitrogen levels.</p>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-slate-400">Progress</span>
+<span class="text-xs font-semibold">0% Complete</span>
+</div>
+<button class="size-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 hover:bg-primary hover:text-slate-900 transition-all">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Module Card: Seed Saving -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:shadow-primary/5 transition-all">
+<div class="relative aspect-video overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Hand holding different types of organic seeds" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC1ECJApbAtl0po5jRAa-XCDhLdb1Qe9icX6vigQiGg8eKerUxQUQ5liy0ZFLbNlOjrVjv5TP5SdwxLBiKwP4N4qdsSbkAHOab93pUnKChE7vJBgbf7VSKGkrm6BWd_C4YPBvIwfwcm81yMwApE0uS6GoIqTsPY9QaAu0dl-zB1NKYG4wHx-U29KWtOCM3ocvIr5MTmnx7rHQTR9TPEqsiUi5gdd0Fi_9jVD9I_8t_SdaTxwIJ9_Fa3ZbZwxplTF0tGB8zB1y-YpJvR')"></div>
+<div class="absolute top-3 right-3">
+<span class="flex items-center gap-1 px-2 py-1 rounded bg-green-500 text-white text-[10px] font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+                                        Downloaded
+                                    </span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Seed Saving 101</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-2">How to harvest, store, and test seeds for future seasons.</p>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-slate-400">Progress</span>
+<span class="text-xs font-semibold">88% Complete</span>
+</div>
+<button class="size-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 hover:bg-primary hover:text-slate-900 transition-all">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Add New Module Placeholder -->
+<div class="group border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-xl flex flex-col items-center justify-center p-8 bg-white/50 dark:bg-slate-800/20 hover:border-primary/50 hover:bg-primary/5 transition-all cursor-pointer">
+<div class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-slate-900 transition-all mb-4">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<p class="font-bold text-slate-500 dark:text-slate-400">Add Module</p>
+<p class="text-xs text-slate-400 mt-1">Request new topic</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Progress Footer (Sticky) -->
+<footer class="bg-white dark:bg-slate-900 border-t border-primary/10 px-8 py-3 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-500 animate-pulse">sync</span>
+<span class="text-xs font-semibold">Syncing "Advanced Composting"...</span>
+</div>
+<div class="h-1.5 w-48 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-amber-500" style="width: 45%"></div>
+</div>
+<span class="text-[10px] text-slate-500">45% • 2 mins remaining</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400 text-sm">wifi</span>
+<span class="text-xs text-slate-500">Connected</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400 text-sm">database</span>
+<span class="text-xs text-slate-500">Last synced: 10m ago</span>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

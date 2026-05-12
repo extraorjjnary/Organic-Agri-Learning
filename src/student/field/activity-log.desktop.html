@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5bec13",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#162210",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Lexend', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white dark:bg-background-dark/50 px-6 py-3 lg:px-10">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined">agriculture</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">FieldLog Pro</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary leading-normal" href="#">Logs</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Reports</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-500 flex border-none bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-lg" data-icon="search">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-slate-100 dark:bg-slate-800 focus:ring-2 focus:ring-primary/50 h-full placeholder:text-slate-500 px-4 rounded-r-lg text-sm font-normal" placeholder="Search logs..." value=""/>
+</div>
+</label>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="User profile avatar of a field manager" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCSjIF0wq2CQV0gtPeeIQM-WCOWXZBT8DxjoJkRYxeFG8QUPHZJ4WjjjpWT1yAmBbPvuZxrNYtl-eaFhLKezIc1Tai-fs0hHOCLwIhxo2ahEWZlnxktFqRs711W5KCcEgR3Ci-MSpmxi6WGwYHLz1KtEXbCJrVukmWzbponAN_RYbnm0luSeS6yDUVznHl2_8RJ3DUbp3amihtr_nq_seyNT8lIf7uaojsDGAbwbtWQWC-Ff3pdcH3r93_ExNyLYHIdKk9vEmMHKlG6");'></div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto">
+<div class="max-w-[1440px] mx-auto px-6 py-8 lg:px-10">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Left Column: Form -->
+<div class="flex-1">
+<div class="flex flex-wrap justify-between items-end gap-3 mb-8">
+<div class="flex flex-col gap-1">
+<h1 class="text-slate-900 dark:text-slate-100 text-3xl font-black leading-tight tracking-[-0.033em]">New Field Activity Log</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal">Document daily field operations and environmental conditions.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-11 px-5 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm font-bold transition-all hover:bg-slate-50">
+                                    Discard
+                                </button>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-11 px-5 bg-primary text-background-dark text-sm font-bold transition-all hover:opacity-90 shadow-sm shadow-primary/20">
+                                    Save Activity
+                                </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="col-span-1">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Practice Name</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 focus:border-primary focus:ring-primary text-slate-900 dark:text-slate-100 h-12" placeholder="e.g. Soil Sampling - East Plot" type="text"/>
+</div>
+<div class="col-span-1">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Category</label>
+<select class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 focus:border-primary focus:ring-primary text-slate-900 dark:text-slate-100 h-12">
+<option>Select Category</option>
+<option>Irrigation</option>
+<option>Pest Management</option>
+<option>Harvesting</option>
+<option>Soil Analysis</option>
+<option>Maintenance</option>
+</select>
+</div>
+<div class="col-span-1">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Date</label>
+<div class="relative">
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 focus:border-primary focus:ring-primary text-slate-900 dark:text-slate-100 h-12 pr-10" type="date"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-slate-400 pointer-events-none">calendar_today</span>
+</div>
+</div>
+<div class="col-span-1">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Location/Field ID</label>
+<input class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 focus:border-primary focus:ring-primary text-slate-900 dark:text-slate-100 h-12" placeholder="e.g. Sector 7G" type="text"/>
+</div>
+<div class="col-span-2">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Observation Notes</label>
+<textarea class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 focus:border-primary focus:ring-primary text-slate-900 dark:text-slate-100 p-4" placeholder="Describe environmental conditions, equipment used, and specific findings..." rows="5"></textarea>
+</div>
+<div class="col-span-2">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Photo Documentation</label>
+<div class="border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-xl p-8 flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-800/30 hover:bg-primary/5 hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-4xl text-slate-400 group-hover:text-primary mb-3">cloud_upload</span>
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400">Click to upload or drag and drop photos</p>
+<p class="text-xs text-slate-400 mt-1">PNG, JPG, HEIC up to 10MB each</p>
+</div>
+<div class="mt-4 flex gap-3 flex-wrap">
+<div class="relative size-20 rounded-lg overflow-hidden group">
+<img class="size-full object-cover" data-alt="Healthy green crop sprouts in soil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYEu71nv4pn9ZwbLl_p5R3ONHpND5YhXAlZCXBTbCtzttOMGEi9quZicUanGmYFoztEk8RBGSpRrzIP98BbZRa_t0xZIcU3ev3ciz36WV1417nsxQdEcig1GHYrGQEAdTZRyPjsLF0YlsE9OEX8_8HEIHoNsacpqVosN9ckY17aoARKEO-gfUpFonGVx4VxbN92BmL3Q-scM8dbxyPXZhCQhovTBa1pxVnftymvSfYPTCqY7xV5OG44UK7xsW_1mB4p5_-YY-HeI5u"/>
+<button class="absolute top-1 right-1 bg-red-500 text-white rounded-full size-5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xs">close</span>
+</button>
+</div>
+<div class="relative size-20 rounded-lg overflow-hidden group">
+<img class="size-full object-cover" data-alt="Moist field soil texture close-up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwzYEqqw-C_hXUa2GTvvj9WDGM4d0ltt3Qe75wLsxqc4XnhO_kpRLqaU8ugg_gixwXdBEa_jizpe6wZmnLqDuN5GHuv8stKW9FG8w7MPojMSXcfxh2dqwDXb9vwHNl7a297TyZkPLpVrytzLXZ99XJlo7GhOuvkd1s1LSqXQ_YzQSt_KzYBuRygPduUJzQFl1ibLP6ykdAntHtfbgRnhVdn-kHpoRhnX0eH9gdqFWDxg5kI3tFkPw1PcYwis2SkDdE81mepwdP6Ju3"/>
+<button class="absolute top-1 right-1 bg-red-500 text-white rounded-full size-5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xs">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Recent Activity -->
+<div class="w-full lg:w-96">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold">Recent Logs</h3>
+<a class="text-primary text-sm font-bold hover:underline" href="#">View All</a>
+</div>
+<div class="space-y-4">
+<!-- Activity Card 1 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary transition-all cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">water_drop</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold truncate">Irrigation System Check</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Today • 08:30 AM</p>
+<p class="text-slate-600 dark:text-slate-300 text-xs mt-2 line-clamp-2 leading-relaxed">System operational in sector B-12. No leaks detected during pressure test.</p>
+</div>
+</div>
+</div>
+<!-- Activity Card 2 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary transition-all cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="size-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400">bug_report</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold truncate">Pest Monitoring</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Yesterday • 04:15 PM</p>
+<p class="text-slate-600 dark:text-slate-300 text-xs mt-2 line-clamp-2 leading-relaxed">Minor aphid infestation noted on South Perimeter. Mitigation recommended.</p>
+</div>
+</div>
+</div>
+<!-- Activity Card 3 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary transition-all cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="size-12 rounded-lg bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-400">precision_manufacturing</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold truncate">Tractor Maintenance</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Oct 24 • 11:00 AM</p>
+<p class="text-slate-600 dark:text-slate-300 text-xs mt-2 line-clamp-2 leading-relaxed">Oil filter replacement and hydraulic fluid top-up for Unit #44.</p>
+</div>
+</div>
+</div>
+<!-- Activity Card 4 -->
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary transition-all cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="size-12 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-purple-600 dark:text-purple-400">analytics</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold truncate">Soil Moisture Analysis</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Oct 23 • 09:45 AM</p>
+<p class="text-slate-600 dark:text-slate-300 text-xs mt-2 line-clamp-2 leading-relaxed">Sensors showing 18% moisture at 15cm depth. Scheduling next irrigation.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action Stats -->
+<div class="mt-8 bg-gradient-to-br from-primary to-primary/80 p-6 rounded-xl text-background-dark">
+<p class="text-xs font-bold uppercase tracking-wider opacity-70">Monthly Summary</p>
+<h4 class="text-2xl font-black mt-1">124 Logs</h4>
+<div class="mt-4 flex flex-col gap-2">
+<div class="flex justify-between items-center text-sm font-medium">
+<span>Goal Progress</span>
+<span>82%</span>
+</div>
+<div class="w-full bg-background-dark/10 rounded-full h-1.5">
+<div class="bg-background-dark h-1.5 rounded-full" style="width: 82%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

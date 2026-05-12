@@ -1,0 +1,385 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Subject Management - Organic Agriculture</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#5bec13',
+              'background-light': '#f6f8f6',
+              'background-dark': '#162210',
+            },
+            fontFamily: {
+              display: ['Lexend'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: 'Lexend', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen"
+  >
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <!-- Header Section -->
+      <header
+        class="flex items-center bg-white dark:bg-slate-900 p-4 border-b border-primary/10 justify-between sticky top-0 z-10"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="text-primary flex size-10 items-center justify-center rounded-lg bg-primary/10"
+          >
+            <span class="material-symbols-outlined">arrow_back</span>
+          </div>
+          <h1
+            class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight"
+          >
+            Manage Subjects
+          </h1>
+        </div>
+        <div class="flex items-center gap-2">
+          <button
+            class="flex size-10 items-center justify-center rounded-full bg-primary text-slate-900 hover:bg-primary/90 transition-colors"
+          >
+            <span class="material-symbols-outlined">add</span>
+          </button>
+        </div>
+      </header>
+      <!-- Search and Filter Section -->
+      <div class="px-4 py-4 space-y-4">
+        <label class="flex flex-col w-full">
+          <div
+            class="flex w-full items-stretch rounded-xl h-12 bg-white dark:bg-slate-800 border border-primary/10 shadow-sm overflow-hidden focus-within:ring-2 focus-within:ring-primary/50"
+          >
+            <div class="text-primary flex items-center justify-center px-4">
+              <span class="material-symbols-outlined">search</span>
+            </div>
+            <input
+              class="flex-1 border-none bg-transparent focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 text-base font-normal"
+              placeholder="Search subjects (e.g. Soil Management)"
+            />
+          </div>
+        </label>
+        <div class="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
+          <button
+            class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5 text-slate-900 text-sm font-semibold"
+          >
+            All Subjects
+          </button>
+          <button
+            class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-primary/10 px-5 text-slate-700 dark:text-slate-300 text-sm font-medium"
+          >
+            Active
+            <span class="material-symbols-outlined text-sm">expand_more</span>
+          </button>
+          <button
+            class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-primary/10 px-5 text-slate-700 dark:text-slate-300 text-sm font-medium"
+          >
+            Pending
+            <span class="material-symbols-outlined text-sm">expand_more</span>
+          </button>
+          <button
+            class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-primary/10 px-5 text-slate-700 dark:text-slate-300 text-sm font-medium"
+          >
+            Department
+            <span class="material-symbols-outlined text-sm">expand_more</span>
+          </button>
+        </div>
+      </div>
+      <!-- Subjects List -->
+      <main class="flex-1 px-4 space-y-3 pb-24">
+        <!-- Subject Card 1 -->
+        <div
+          class="flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-xl border border-primary/5 shadow-sm"
+        >
+          <div
+            class="flex items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0 size-14"
+          >
+            <span class="material-symbols-outlined text-3xl">eco</span>
+          </div>
+          <div class="flex flex-1 flex-col justify-center min-w-0">
+            <div class="flex items-center gap-2">
+              <p
+                class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight truncate"
+              >
+                Organic Fertilizer
+              </p>
+              <span
+                class="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-wider"
+                >Active</span
+              >
+            </div>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-sm font-medium mt-1"
+            >
+              Dept: Soil Science
+            </p>
+            <p class="text-slate-400 dark:text-slate-500 text-xs mt-0.5">
+              Updated 2 days ago
+            </p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <button
+              class="p-2 text-slate-400 hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">edit</span>
+            </button>
+            <button
+              class="p-2 text-slate-400 hover:text-red-500 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">delete</span>
+            </button>
+          </div>
+        </div>
+        <!-- Subject Card 2 -->
+        <div
+          class="flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-xl border border-primary/5 shadow-sm"
+        >
+          <div
+            class="flex items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0 size-14"
+          >
+            <span class="material-symbols-outlined text-3xl">landslide</span>
+          </div>
+          <div class="flex flex-1 flex-col justify-center min-w-0">
+            <div class="flex items-center gap-2">
+              <p
+                class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight truncate"
+              >
+                Soil Management
+              </p>
+              <span
+                class="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-wider"
+                >Active</span
+              >
+            </div>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-sm font-medium mt-1"
+            >
+              Dept: Earth Sciences
+            </p>
+            <p class="text-slate-400 dark:text-slate-500 text-xs mt-0.5">
+              Updated 1 week ago
+            </p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <button
+              class="p-2 text-slate-400 hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">edit</span>
+            </button>
+            <button
+              class="p-2 text-slate-400 hover:text-red-500 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">delete</span>
+            </button>
+          </div>
+        </div>
+        <!-- Subject Card 3 -->
+        <div
+          class="flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-xl border border-primary/5 shadow-sm opacity-80"
+        >
+          <div
+            class="flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-400 shrink-0 size-14"
+          >
+            <span class="material-symbols-outlined text-3xl">pest_control</span>
+          </div>
+          <div class="flex flex-1 flex-col justify-center min-w-0">
+            <div class="flex items-center gap-2">
+              <p
+                class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight truncate"
+              >
+                Natural Pest Control
+              </p>
+              <span
+                class="px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 text-[10px] font-bold uppercase tracking-wider"
+                >Pending</span
+              >
+            </div>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-sm font-medium mt-1"
+            >
+              Dept: Crop Protection
+            </p>
+            <p class="text-slate-400 dark:text-slate-500 text-xs mt-0.5">
+              Created yesterday
+            </p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <button
+              class="p-2 text-slate-400 hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">edit</span>
+            </button>
+            <button
+              class="p-2 text-slate-400 hover:text-red-500 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">delete</span>
+            </button>
+          </div>
+        </div>
+        <!-- Subject Card 4 -->
+        <div
+          class="flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-xl border border-primary/5 shadow-sm"
+        >
+          <div
+            class="flex items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0 size-14"
+          >
+            <span class="material-symbols-outlined text-3xl">water_drop</span>
+          </div>
+          <div class="flex flex-1 flex-col justify-center min-w-0">
+            <div class="flex items-center gap-2">
+              <p
+                class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight truncate"
+              >
+                Sustainable Irrigation
+              </p>
+              <span
+                class="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-wider"
+                >Active</span
+              >
+            </div>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-sm font-medium mt-1"
+            >
+              Dept: Water Management
+            </p>
+            <p class="text-slate-400 dark:text-slate-500 text-xs mt-0.5">
+              Updated 3 days ago
+            </p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <button
+              class="p-2 text-slate-400 hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">edit</span>
+            </button>
+            <button
+              class="p-2 text-slate-400 hover:text-red-500 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">delete</span>
+            </button>
+          </div>
+        </div>
+        <!-- Subject Card 5 -->
+        <div
+          class="flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-xl border border-primary/5 shadow-sm"
+        >
+          <div
+            class="flex items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0 size-14"
+          >
+            <span class="material-symbols-outlined text-3xl">agriculture</span>
+          </div>
+          <div class="flex flex-1 flex-col justify-center min-w-0">
+            <div class="flex items-center gap-2">
+              <p
+                class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight truncate"
+              >
+                Crop Rotation Ethics
+              </p>
+              <span
+                class="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-wider"
+                >Active</span
+              >
+            </div>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-sm font-medium mt-1"
+            >
+              Dept: General Farming
+            </p>
+            <p class="text-slate-400 dark:text-slate-500 text-xs mt-0.5">
+              Updated 5 days ago
+            </p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <button
+              class="p-2 text-slate-400 hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">edit</span>
+            </button>
+            <button
+              class="p-2 text-slate-400 hover:text-red-500 transition-colors"
+            >
+              <span class="material-symbols-outlined text-xl">delete</span>
+            </button>
+          </div>
+        </div>
+      </main>
+      <!-- Bottom Navigation Bar -->
+      <nav
+        class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-primary/10 px-4 pb-6 pt-3 flex justify-around items-center z-20"
+      >
+        <a
+          class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500"
+          href="#"
+        >
+          <span class="material-symbols-outlined">home</span>
+          <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-primary" href="#">
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: 'FILL' 1"
+            >book_4</span
+          >
+          <span class="text-[10px] font-bold">Subjects</span>
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500"
+          href="#"
+        >
+          <span class="material-symbols-outlined">group</span>
+          <span class="text-[10px] font-medium">Departments</span>
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500"
+          href="#"
+        >
+          <span class="material-symbols-outlined">settings</span>
+          <span class="text-[10px] font-medium">Settings</span>
+        </a>
+      </nav>
+    </div>
+  </body>
+</html>

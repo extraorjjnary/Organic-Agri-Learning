@@ -1,0 +1,179 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Greenfield - Organic Agriculture Learning</title>
+    <!-- Google Fonts: Lexend -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                DEFAULT: '#5bec13',
+                dark: '#4dbd0f',
+                light: '#f0fdf4',
+              },
+            },
+            fontFamily: {
+              lexend: ['Lexend', 'sans-serif'],
+            },
+            borderRadius: {
+              custom: '8px', // Based on ROUND_EIGHT
+            },
+          },
+        },
+      };
+    </script>
+    <style data-purpose="custom-layout">
+      body {
+        font-family: 'Lexend', sans-serif;
+        background-color: #f8fafc;
+        /* Background pattern representing subtle organic textures */
+        background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDyg0gy4FLQMCNjN4U_mx--gDJyqwjrfmpv4bfhnyVmB7M9uF7xnaeoP7AwYiot_ndKvAths7zbjrl2mVx9c5d9i_INVuNcyfCqyXC0bWI7wYyogo4o_MgksI3XQauTF-TuXnsXP-4zektLkhxEcl7fkcSucHLoO5yg0MwN_C7QE_hxLPNuIj2nYGsG3ljMMe48WWBKWo-D12zIeddNMKbBJFptNWy1dvTg2kz8BokPnnLYzMhW3oP9d-WnJbO3Uam7AnqNSgUzl8b_);
+      }
+      .leaf-bg {
+        position: fixed;
+        bottom: -20px;
+        right: -20px;
+        opacity: 0.1;
+        z-index: -1;
+        width: 200px;
+        transform: rotate(-15deg);
+      }
+      .form-container {
+        backdrop-filter: blur(8px);
+        background-color: rgba(255, 255, 255, 0.95);
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen flex flex-col items-center justify-center p-6 text-slate-800"
+  >
+    <!-- Leaf background element for nature theme -->
+    <img
+      alt=""
+      aria-hidden="true"
+      class="leaf-bg"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuChIe0Ml7tCxG20CyS6VWe3lbQpycR2D8dYD61wTh9DFZR6J0etZWJhcaFFKs_d4HRzOYwUd9-nQn8OZfW0JF9jMz4FjBlMvE3VoaSN2bOp_80elHQghRqevKGMMA2-EDR4B-DxWiGOfIXuw-Vfu943B0RwW1MFv0fdM-jL-P45G5tIWHdD0tBeie6iCDX-UrqcwgvlbWEmtNCvrrk4oS9dsJFQJa3l4xv867OFvH9iZG67kwz_cmn_ylh4GGHZdFJ_71MXkkQziz7a"
+    />
+    <!-- BEGIN: LoginContainer -->
+    <main
+      class="w-full max-w-sm flex flex-col items-center space-y-8"
+      data-purpose="login-wrapper"
+    >
+      <!-- BEGIN: Branding -->
+      <header
+        class="flex flex-col items-center space-y-4"
+        data-purpose="brand-identity"
+      >
+        <div
+          class="w-20 h-20 bg-brand flex items-center justify-center rounded-custom shadow-lg"
+        >
+          <!-- Logo Placeholder -->
+          <svg
+            class="h-12 w-12 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewbox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            ></path>
+          </svg>
+        </div>
+        <div class="text-center">
+          <h1 class="text-3xl font-bold tracking-tight text-slate-900">
+            Greenfield
+          </h1>
+          <p class="text-sm text-slate-500 font-medium">
+            Organic Agriculture Learning
+          </p>
+        </div>
+      </header>
+      <!-- END: Branding -->
+      <!-- BEGIN: LoginForm -->
+      <section
+        class="w-full form-container p-8 rounded-custom shadow-xl border border-slate-100"
+        data-purpose="login-form-section"
+      >
+        <form action="#" class="space-y-6" method="POST">
+          <!-- School ID Field -->
+          <div class="space-y-2">
+            <label
+              class="block text-sm font-semibold text-slate-700"
+              for="school-id"
+              >School ID</label
+            >
+            <input
+              class="block w-full px-4 py-3 rounded-custom border-slate-200 focus:border-brand focus:ring-brand transition-colors text-base"
+              id="school-id"
+              name="school-id"
+              placeholder="e.g. GF-12345"
+              required=""
+              type="text"
+            />
+          </div>
+          <!-- Password Field -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <label
+                class="block text-sm font-semibold text-slate-700"
+                for="password"
+                >Password</label
+              >
+            </div>
+            <input
+              class="block w-full px-4 py-3 rounded-custom border-slate-200 focus:border-brand focus:ring-brand transition-colors text-base"
+              id="password"
+              name="password"
+              placeholder="••••••••"
+              required=""
+              type="password"
+            />
+          </div>
+          <!-- Login Button -->
+          <button
+            class="w-full py-3.5 px-4 bg-brand hover:bg-brand-dark text-white font-bold rounded-custom shadow-md hover:shadow-lg transform active:scale-[0.98] transition-all text-lg"
+            data-purpose="submit-button"
+            type="submit"
+          >
+            Login
+          </button>
+          <!-- Forgot Password Link -->
+          <div class="text-center">
+            <a
+              class="text-sm font-medium text-brand-dark hover:underline decoration-2 underline-offset-4"
+              href="#"
+            >
+              Forgot Password?
+            </a>
+          </div>
+        </form>
+      </section>
+      <!-- END: LoginForm -->
+      <!-- BEGIN: Footer -->
+      <footer class="text-center pb-8" data-purpose="login-footer">
+        <p class="text-xs text-slate-400">
+          © 2023 Greenfield Platform. All rights reserved.
+        </p>
+      </footer>
+      <!-- END: Footer -->
+    </main>
+    <!-- END: LoginContainer -->
+  </body>
+</html>

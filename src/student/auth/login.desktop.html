@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Greenfield | Organic Agriculture Learning Platform Login</title>
+<!-- BEGIN: Google Fonts - Lexend -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- END: Google Fonts - Lexend -->
+<!-- BEGIN: Tailwind CSS & Configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#5bec13',
+              dark: '#4abd0f',
+            },
+            greenfield: {
+              dark: '#1a2e05',
+              muted: '#4b5563',
+            }
+          },
+          fontFamily: {
+            lexend: ['Lexend', 'sans-serif'],
+          },
+          borderRadius: {
+            'custom': '8px', // Based on ROUND_EIGHT
+          }
+        }
+      }
+    }
+  </script>
+<!-- END: Tailwind CSS & Configuration -->
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="global-styles">
+    body {
+      font-family: 'Lexend', sans-serif;
+      background-color: #f9fafb;
+    }
+    .roundness-applied {
+      border-radius: 8px;
+    }
+  </style>
+<style data-purpose="layout-utilities">
+    .split-screen-container {
+      min-height: 100vh;
+      display: flex;
+    }
+    .image-side {
+      flex: 1;
+      display: none;
+    }
+    @media (min-width: 1024px) {
+      .image-side {
+        display: block;
+      }
+      .form-side {
+        width: 450px;
+        flex: none;
+      }
+    }
+    @media (min-width: 1280px) {
+      .form-side {
+        width: 550px;
+      }
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="text-slate-900 overflow-x-hidden">
+<!-- BEGIN: Main Login Container -->
+<main class="split-screen-container">
+<!-- BEGIN: Left Side - Brand Image -->
+<section class="image-side relative overflow-hidden bg-green-900" data-purpose="visual-branding">
+<!-- Background Image -->
+<img alt="Lush organic farm garden" class="absolute inset-0 w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtlwo4c4gqY9RGvAFjffCAmzVBCAAVB3FrydkKgDreb-COjg6NJMy4_Q-yDAJeM3MsenGWGMkz22Qjq7_9dROnmmwGZlsfq_WL27bWYqE9sX120B2HQH7h5e-PwmqKHHJnHKNevujgqb-41Cgb7aFKmWvKQLS99x9U8Inw0Uh4QQbQoVRljWt50zvjeqgQfCTWIzElIbbl0QxSjAPUOSljUDVueYdR6IvFmHUu0TbOxkAotolc2BIZOsbrTRVPL3S-kesMsTNOCoD0"/>
+<!-- Overlay for text contrast -->
+<div class="absolute inset-0 bg-gradient-to-t from-green-900/80 to-transparent"></div>
+<!-- Content on Image -->
+<div class="absolute bottom-12 left-12 right-12 text-white">
+<h2 class="text-4xl font-bold mb-4">Grow Your Future.</h2>
+<p class="text-lg opacity-90 max-w-md">
+          Join the next generation of organic agriculture professionals. Access your learning dashboard and resources at Greenfield.
+        </p>
+</div>
+</section>
+<!-- END: Left Side - Brand Image -->
+<!-- BEGIN: Right Side - Login Form -->
+<section class="form-side flex-1 flex flex-col justify-center items-center px-8 sm:px-12 bg-white" data-purpose="login-interface">
+<div class="w-full max-w-md">
+<!-- BEGIN: Header & Logo -->
+<div class="mb-10 text-center lg:text-left">
+<div class="flex items-center justify-center lg:justify-start gap-2 mb-6" data-purpose="brand-logo">
+<div class="w-10 h-10 bg-brand flex items-center justify-center roundness-applied">
+<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<span class="text-2xl font-bold tracking-tight text-greenfield-dark">Greenfield</span>
+</div>
+<h1 class="text-3xl font-bold text-slate-800 mb-2">Welcome Back</h1>
+<p class="text-slate-500">Please enter your credentials to access your account.</p>
+</div>
+<!-- END: Header & Logo -->
+<!-- BEGIN: Login Form Fields -->
+<form action="#" class="space-y-6" method="POST">
+<!-- School ID Input -->
+<div class="space-y-2">
+<label class="block text-sm font-medium text-slate-700" for="school-id">School ID</label>
+<input class="w-full px-4 py-3 border border-slate-200 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all roundness-applied" id="school-id" name="school-id" placeholder="e.g. GF-2023-001" required="" type="text"/>
+</div>
+<!-- Password Input -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="block text-sm font-medium text-slate-700" for="password">Password</label>
+<a class="text-sm font-semibold text-brand hover:text-brand-dark transition-colors" href="#">Forgot Password?</a>
+</div>
+<input class="w-full px-4 py-3 border border-slate-200 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all roundness-applied" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+<!-- Remember Me Checkbox -->
+<div class="flex items-center">
+<input class="h-4 w-4 text-brand focus:ring-brand border-slate-300 rounded" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="ml-2 block text-sm text-slate-600" for="remember-me">
+              Remember this device
+            </label>
+</div>
+<!-- Login Button -->
+<button class="w-full bg-brand hover:bg-brand-dark text-white font-bold py-4 px-6 shadow-lg shadow-brand/20 transition-all hover:-translate-y-0.5 active:translate-y-0 roundness-applied" data-purpose="submit-login" type="submit">
+            Login to Dashboard
+          </button>
+</form>
+<!-- END: Login Form Fields -->
+<!-- BEGIN: Footer Links -->
+<div class="mt-12 text-center">
+<p class="text-slate-500 text-sm">
+            Don't have an account yet? 
+            <a class="text-brand font-semibold hover:underline" href="#">Contact your administrator</a>
+</p>
+</div>
+<!-- END: Footer Links -->
+</div>
+<!-- Mobile Footer Attribution -->
+<footer class="mt-auto py-8 text-xs text-slate-400 lg:hidden">
+        © 2023 Greenfield Organic Agriculture. All rights reserved.
+      </footer>
+</section>
+<!-- END: Right Side - Login Form -->
+</main>
+<!-- END: Main Login Container -->
+</body></html>

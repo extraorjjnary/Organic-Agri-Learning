@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoLearn - Composting 101</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5bec13",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#162210",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white dark:bg-slate-900 px-6 lg:px-40 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-slate-900 dark:text-slate-100">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">eco</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">EcoLearn</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Courses</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Community</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 lg:gap-8 items-center">
+<label class="hidden sm:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden border border-primary/20">
+<div class="bg-slate-50 dark:bg-slate-800 flex items-center justify-center px-3 border-r border-primary/10">
+<span class="material-symbols-outlined text-slate-500 text-xl">search</span>
+</div>
+<input class="w-full bg-slate-50 dark:bg-slate-800 text-sm focus:outline-none border-none placeholder:text-slate-400" placeholder="Search lessons..." value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex size-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">notifications</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">settings</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="Student profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDz6_nntTljZFNqPtWfIT4woI1rzmWrxBMlGXwVs5R0iIE5sXIxxh2jkZ6FAoqsgcRuD829a5jSwnRD5tmv-gRyeExc85tygojQtdM6HTq94pGYCtvaoveAx7AwjB8lRcCHwZvw1ApupyKJ4FGA8znUNaotuMFf6EDXLMw1IeLgzVFnJz6LbJZ9dTsHOR3Z_6fE_he5h45zpVeARsVuhvf1ewvrpEQldOgd8hShYxJfXXHkqcsyxiEm19Djwc6ToQQ1MAISnrvpWGQ1");'></div>
+</div>
+</header>
+<main class="flex flex-1 w-full max-w-[1440px] mx-auto px-4 lg:px-40 py-8 gap-8">
+<aside class="hidden lg:flex flex-col w-72 shrink-0 gap-6 sticky top-24 self-start">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">list_alt</span>
+                        Module Outline
+                    </h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold tracking-wider uppercase mb-4">Composting Basics</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">info</span>
+<span class="text-sm font-medium">Introduction</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-slate-900 dark:text-white border-l-4 border-primary" href="#">
+<span class="material-symbols-outlined text-xl text-primary" style="font-variation-settings: 'FILL' 1">energy_savings_leaf</span>
+<span class="text-sm font-bold">Green Materials</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">package_2</span>
+<span class="text-sm font-medium">Brown Materials</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 dark:text-slate-500 cursor-not-allowed" href="#">
+<span class="material-symbols-outlined text-xl">opacity</span>
+<span class="text-sm font-medium">Moisture Control</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 dark:text-slate-500 cursor-not-allowed" href="#">
+<span class="material-symbols-outlined text-xl">report_problem</span>
+<span class="text-sm font-medium">Troubleshooting</span>
+</a>
+</nav>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-bold">Module Progress</span>
+<span class="text-xs text-primary font-bold">45%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 45%;"></div>
+</div>
+<p class="mt-4 text-xs text-slate-500 dark:text-slate-400 italic flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">history</span>
+                        Resume: Green Materials
+                    </p>
+</div>
+</aside>
+<article class="flex-1 min-w-0">
+<nav class="flex items-center gap-2 mb-6 text-sm">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-sm text-slate-400">chevron_right</span>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Sustainability</a>
+<span class="material-symbols-outlined text-sm text-slate-400">chevron_right</span>
+<span class="font-bold text-slate-900 dark:text-white">Composting 101</span>
+</nav>
+<div class="bg-white dark:bg-slate-900 rounded-2xl border border-primary/10 shadow-sm overflow-hidden">
+<div class="p-8 lg:p-12">
+<h1 class="text-4xl lg:text-5xl font-black text-slate-900 dark:text-white mb-4 tracking-tight">Green Materials: The Nitrogen Source</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-2xl leading-relaxed">
+                            Learn which kitchen scraps and garden waste add vital nitrogen to your pile. Nitrogen is the "protein" of the compost heap, fueling the bacteria that do the heavy lifting.
+                        </p>
+<div class="aspect-video w-full rounded-xl bg-slate-100 dark:bg-slate-800 relative group cursor-pointer overflow-hidden mb-10">
+<img alt="Kitchen scraps for composting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Assorted vegetable scraps on a table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZs0FdLJsr41dg0pAgZPX2ImKYY3TcuSJe8kmDJk1qyNlsfibNMavo0kHApzmzpht9r3TUuThP0_x5nC8eWTHBYkIuoeqgTi6TB5GZBNU9T4egbDRFwILWxkFrVqrycY_fRZBv4JVEPiAUeYFgSocCWMhbarD8s276csVwxXidce0ou67u_SVAtom-GgmLJYP7yycHfJlcIVJMwWuHuTSXi_2UvPcfnuawhpkPPgoP-dCkl_im-dykq1EYVF7mqhD-e-DnRUa5rm0W"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+<div class="size-20 rounded-full bg-primary flex items-center justify-center text-white shadow-xl shadow-primary/30 transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md p-4 rounded-lg flex justify-between items-center">
+<span class="text-white text-sm font-medium">Watch: The Chemistry of Greens (4:22)</span>
+<span class="material-symbols-outlined text-white">hd</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+<div class="p-6 rounded-xl border border-primary/20 bg-primary/5">
+<h4 class="font-bold text-lg mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                                    What counts as Green?
+                                </h4>
+<ul class="space-y-2 text-slate-700 dark:text-slate-300">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-lg">add</span>
+<span>Vegetable and fruit scraps</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-lg">add</span>
+<span>Coffee grounds and tea bags</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-lg">add</span>
+<span>Fresh grass clippings</span>
+</li>
+</ul>
+</div>
+<div class="p-6 rounded-xl border border-red-200 dark:border-red-900/30 bg-red-50 dark:bg-red-900/10">
+<h4 class="font-bold text-lg mb-3 flex items-center gap-2 text-red-700 dark:text-red-400">
+<span class="material-symbols-outlined">cancel</span>
+                                    Avoid these items
+                                </h4>
+<ul class="space-y-2 text-slate-700 dark:text-slate-300">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-red-400 text-lg">remove</span>
+<span>Dairy products and oils</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-red-400 text-lg">remove</span>
+<span>Meat or fish bones</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-red-400 text-lg">remove</span>
+<span>Pet waste (cats/dogs)</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 p-6 lg:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-primary/10">
+<button class="w-full sm:w-auto px-8 py-3 rounded-xl border border-primary text-primary font-bold hover:bg-primary/10 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">chevron_left</span>
+                            Previous Lesson
+                        </button>
+<div class="flex items-center gap-4 w-full sm:w-auto">
+<div class="hidden md:block text-right">
+<p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Up Next</p>
+<p class="text-sm font-bold">Brown Materials</p>
+</div>
+<button class="w-full sm:w-auto px-10 py-3 rounded-xl bg-primary text-slate-900 font-bold hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                                Next Lesson
+                                <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-8 p-6 bg-primary/10 rounded-xl border-2 border-dashed border-primary/30 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-white dark:bg-slate-900 flex items-center justify-center text-primary border border-primary/20">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<div>
+<h4 class="font-bold">Ready for a mini-quiz?</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400">Test your knowledge of green materials to unlock the next module.</p>
+</div>
+</div>
+<button class="px-6 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg text-sm font-bold hover:bg-slate-800 transition-colors">
+                        Take Quiz
+                    </button>
+</div>
+</article>
+</main>
+<footer class="bg-white dark:bg-slate-900 border-t border-primary/10 py-12 px-4 md:px-40 mt-12">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 text-slate-900 dark:text-slate-100 mb-6">
+<div class="size-6 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-lg">eco</span>
+</div>
+<h2 class="text-lg font-bold">EcoLearn</h2>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">Empowering individuals to lead more sustainable lives through accessible environmental education.</p>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-6 uppercase tracking-widest">Platform</h5>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Browse Courses</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Learning Paths</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Certifications</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-6 uppercase tracking-widest">Community</h5>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Forums</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Events</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Student Stories</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-6 uppercase tracking-widest">Connect</h5>
+<div class="flex gap-4">
+<a class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto pt-12 mt-12 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-400">© 2024 EcoLearn. All rights reserved.</p>
+<div class="flex gap-6 text-xs text-slate-400">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

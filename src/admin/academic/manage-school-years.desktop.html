@@ -1,0 +1,518 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#5bec13',
+              'background-light': '#f6f8f6',
+              'background-dark': '#162210',
+            },
+            fontFamily: {
+              display: ['Lexend', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased"
+  >
+    <div class="relative flex min-h-screen w-full flex-col">
+      <!-- Top Navigation Bar -->
+      <header
+        class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 lg:px-20 py-3"
+      >
+        <div
+          class="mx-auto flex max-w-[1440px] items-center justify-between gap-8"
+        >
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-3">
+              <div
+                class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-background-dark"
+              >
+                <span class="material-symbols-outlined font-bold">school</span>
+              </div>
+              <h2 class="text-lg font-bold tracking-tight">EduAdmin</h2>
+            </div>
+            <nav class="hidden md:flex items-center gap-6">
+              <a
+                class="text-sm font-semibold transition-colors hover:text-primary"
+                href="#"
+                >Dashboard</a
+              >
+              <a
+                class="text-sm font-semibold transition-colors hover:text-primary"
+                href="#"
+                >Students</a
+              >
+              <a class="text-sm font-semibold text-primary" href="#"
+                >Academic</a
+              >
+              <a
+                class="text-sm font-semibold transition-colors hover:text-primary"
+                href="#"
+                >Staff</a
+              >
+              <a
+                class="text-sm font-semibold transition-colors hover:text-primary"
+                href="#"
+                >Settings</a
+              >
+            </nav>
+          </div>
+          <div class="flex flex-1 items-center justify-end gap-4">
+            <div class="relative hidden max-w-sm w-full lg:block">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                >search</span
+              >
+              <input
+                class="w-full rounded-lg border-none bg-slate-100 dark:bg-slate-800 pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary"
+                placeholder="Search academic records..."
+                type="text"
+              />
+            </div>
+            <div class="flex items-center gap-2">
+              <button
+                class="relative flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 transition-colors hover:bg-slate-200 dark:hover:bg-slate-700"
+              >
+                <span class="material-symbols-outlined">notifications</span>
+                <span
+                  class="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-primary"
+                ></span>
+              </button>
+              <div
+                class="h-10 w-10 rounded-full border-2 border-primary bg-cover bg-center"
+                data-alt="User profile avatar with professional look"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhUHPR5AJMIYsCcy0GJKbv_-EM4oQCVrKcNCv3c6VDlEPg2Y0nDPh0jeWPbChZuOnqVvU9dJhk9hjkvVNBY-1cw0_jIE7RrX2io0ZtrI1ptAAJE-8IWxQqTUpbTOBeXpW5knUyeJhGnUZoUAzH9MDr4su2iMif2-w-81rvoLgtQoxqgGISND-OP2ZOSAtYAF4PUC4Q7g6UhWxnAG4GHXYvOO8VpSJaEcnD308qWVCIHYZHvV5ByNf9RBsbI4RwNoSgRa91IwRgA8kt');
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main
+        class="mx-auto flex w-full max-w-[1440px] flex-1 flex-col lg:flex-row"
+      >
+        <!-- Sidebar -->
+        <aside
+          class="w-full border-r border-slate-200 dark:border-slate-800 p-6 lg:w-72"
+        >
+          <div class="flex flex-col gap-6">
+            <div>
+              <h3
+                class="px-3 text-xs font-bold uppercase tracking-wider text-slate-400"
+              >
+                Academic Management
+              </h3>
+            </div>
+            <nav class="flex flex-col gap-1">
+              <a
+                class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2.5 text-sm font-bold text-slate-900 dark:text-slate-100"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >calendar_today</span
+                >
+                School Years
+              </a>
+              <a
+                class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all hover:bg-slate-100 dark:hover:bg-slate-800"
+                href="#"
+              >
+                <span class="material-symbols-outlined opacity-60"
+                  >menu_book</span
+                >
+                Curriculum
+              </a>
+              <a
+                class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all hover:bg-slate-100 dark:hover:bg-slate-800"
+                href="#"
+              >
+                <span class="material-symbols-outlined opacity-60"
+                  >schedule</span
+                >
+                Term Dates
+              </a>
+              <a
+                class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all hover:bg-slate-100 dark:hover:bg-slate-800"
+                href="#"
+              >
+                <span class="material-symbols-outlined opacity-60"
+                  >beach_access</span
+                >
+                Holidays
+              </a>
+              <a
+                class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all hover:bg-slate-100 dark:hover:bg-slate-800"
+                href="#"
+              >
+                <span class="material-symbols-outlined opacity-60"
+                  >bar_chart</span
+                >
+                Grading Schemes
+              </a>
+            </nav>
+          </div>
+        </aside>
+        <!-- Content Area -->
+        <section class="flex-1 p-6 lg:p-10">
+          <div
+            class="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-center"
+          >
+            <div>
+              <h1 class="text-3xl font-black tracking-tight lg:text-4xl">
+                Manage School Years
+              </h1>
+              <p class="mt-1 text-slate-500 dark:text-slate-400">
+                Configure and monitor academic periods and status.
+              </p>
+            </div>
+            <button
+              class="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-bold text-background-dark shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] active:scale-95"
+            >
+              <span class="material-symbols-outlined text-lg">add_circle</span>
+              New School Year
+            </button>
+          </div>
+          <!-- Tabs -->
+          <div
+            class="mb-6 flex border-b border-slate-200 dark:border-slate-800"
+          >
+            <button
+              class="border-b-2 border-primary px-6 py-3 text-sm font-bold text-slate-900 dark:text-slate-100"
+            >
+              All Years
+            </button>
+            <button
+              class="border-b-2 border-transparent px-6 py-3 text-sm font-medium text-slate-500 hover:text-slate-700 dark:hover:text-slate-300"
+            >
+              Current
+            </button>
+            <button
+              class="border-b-2 border-transparent px-6 py-3 text-sm font-medium text-slate-500 hover:text-slate-700 dark:hover:text-slate-300"
+            >
+              Archived
+            </button>
+          </div>
+          <!-- Table Container -->
+          <div
+            class="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark shadow-sm"
+          >
+            <div class="overflow-x-auto">
+              <table class="w-full text-left">
+                <thead>
+                  <tr class="bg-slate-50 dark:bg-slate-800/50">
+                    <th
+                      class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500"
+                    >
+                      School Year
+                    </th>
+                    <th
+                      class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500"
+                    >
+                      Status
+                    </th>
+                    <th
+                      class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500"
+                    >
+                      Start Date
+                    </th>
+                    <th
+                      class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500"
+                    >
+                      End Date
+                    </th>
+                    <th
+                      class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500"
+                    >
+                      Classes
+                    </th>
+                    <th
+                      class="px-6 py-4 text-right text-xs font-bold uppercase tracking-wider text-slate-500"
+                    >
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                  <!-- Row 1 (Current) -->
+                  <tr
+                    class="group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+                  >
+                    <td class="px-6 py-5">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/20 text-primary"
+                        >
+                          <span class="material-symbols-outlined text-lg"
+                            >event_note</span
+                          >
+                        </div>
+                        <span class="font-semibold">2023-2024</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-5">
+                      <span
+                        class="inline-flex items-center gap-1.5 rounded-full bg-primary/20 px-3 py-1 text-xs font-bold text-slate-900 dark:text-primary"
+                      >
+                        <span
+                          class="h-1.5 w-1.5 rounded-full bg-primary"
+                        ></span>
+                        Current
+                      </span>
+                    </td>
+                    <td
+                      class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400"
+                    >
+                      Sep 01, 2023
+                    </td>
+                    <td
+                      class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400"
+                    >
+                      Jun 30, 2024
+                    </td>
+                    <td class="px-6 py-5">
+                      <span class="text-sm font-semibold">42</span>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                      <button
+                        class="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-primary dark:hover:bg-slate-700"
+                      >
+                        <span class="material-symbols-outlined">edit</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Row 2 (Upcoming) -->
+                  <tr
+                    class="group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+                  >
+                    <td class="px-6 py-5">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/10 text-blue-500"
+                        >
+                          <span class="material-symbols-outlined text-lg"
+                            >upcoming</span
+                          >
+                        </div>
+                        <span class="font-semibold">2024-2025</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-5">
+                      <span
+                        class="inline-flex items-center gap-1.5 rounded-full bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-xs font-bold text-blue-600"
+                      >
+                        Upcoming
+                      </span>
+                    </td>
+                    <td
+                      class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400"
+                    >
+                      Sep 01, 2024
+                    </td>
+                    <td
+                      class="px-6 py-5 text-sm text-slate-600 dark:text-slate-400"
+                    >
+                      Jun 30, 2025
+                    </td>
+                    <td class="px-6 py-5">
+                      <span class="text-sm font-semibold">0</span>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                      <button
+                        class="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-primary dark:hover:bg-slate-700"
+                      >
+                        <span class="material-symbols-outlined">edit</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Row 3 (Archived) -->
+                  <tr
+                    class="group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+                  >
+                    <td class="px-6 py-5">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-500"
+                        >
+                          <span class="material-symbols-outlined text-lg"
+                            >archive</span
+                          >
+                        </div>
+                        <span class="font-semibold text-slate-500"
+                          >2022-2023</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-5">
+                      <span
+                        class="inline-flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-bold text-slate-500"
+                      >
+                        Archived
+                      </span>
+                    </td>
+                    <td class="px-6 py-5 text-sm text-slate-500">
+                      Sep 01, 2022
+                    </td>
+                    <td class="px-6 py-5 text-sm text-slate-500">
+                      Jun 30, 2023
+                    </td>
+                    <td class="px-6 py-5">
+                      <span class="text-sm font-semibold text-slate-500"
+                        >38</span
+                      >
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                      <button
+                        class="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-primary dark:hover:bg-slate-700"
+                      >
+                        <span class="material-symbols-outlined"
+                          >visibility</span
+                        >
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Row 4 (Archived) -->
+                  <tr
+                    class="group hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+                  >
+                    <td class="px-6 py-5">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-500"
+                        >
+                          <span class="material-symbols-outlined text-lg"
+                            >archive</span
+                          >
+                        </div>
+                        <span class="font-semibold text-slate-500"
+                          >2021-2022</span
+                        >
+                      </div>
+                    </td>
+                    <td class="px-6 py-5">
+                      <span
+                        class="inline-flex items-center gap-1.5 rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-bold text-slate-500"
+                      >
+                        Archived
+                      </span>
+                    </td>
+                    <td class="px-6 py-5 text-sm text-slate-500">
+                      Sep 01, 2021
+                    </td>
+                    <td class="px-6 py-5 text-sm text-slate-500">
+                      Jun 30, 2022
+                    </td>
+                    <td class="px-6 py-5">
+                      <span class="text-sm font-semibold text-slate-500"
+                        >35</span
+                      >
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                      <button
+                        class="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-primary dark:hover:bg-slate-700"
+                      >
+                        <span class="material-symbols-outlined"
+                          >visibility</span
+                        >
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Pagination/Summary -->
+          <div
+            class="mt-6 flex flex-col items-center justify-between gap-4 sm:flex-row"
+          >
+            <p class="text-sm text-slate-500">
+              Showing
+              <span class="font-bold text-slate-900 dark:text-slate-100"
+                >4</span
+              >
+              academic years
+            </p>
+            <div class="flex items-center gap-2">
+              <button
+                class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50"
+                disabled=""
+              >
+                <span class="material-symbols-outlined text-lg"
+                  >chevron_left</span
+                >
+              </button>
+              <button
+                class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-background-dark font-bold text-sm"
+              >
+                1
+              </button>
+              <button
+                class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800"
+              >
+                <span class="material-symbols-outlined text-lg"
+                  >chevron_right</span
+                >
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- Footer -->
+      <footer
+        class="mx-auto w-full max-w-[1440px] border-t border-slate-200 dark:border-slate-800 px-6 py-8"
+      >
+        <div
+          class="flex flex-col items-center justify-between gap-4 sm:flex-row"
+        >
+          <div class="flex items-center gap-2 opacity-60">
+            <span class="material-symbols-outlined text-sm">copyright</span>
+            <span class="text-xs font-medium"
+              >2024 EduAdmin Management System. All rights reserved.</span
+            >
+          </div>
+          <div class="flex items-center gap-6">
+            <a class="text-xs font-medium opacity-60 hover:opacity-100" href="#"
+              >Privacy Policy</a
+            >
+            <a class="text-xs font-medium opacity-60 hover:opacity-100" href="#"
+              >Terms of Service</a
+            >
+            <a class="text-xs font-medium opacity-60 hover:opacity-100" href="#"
+              >Help Center</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
